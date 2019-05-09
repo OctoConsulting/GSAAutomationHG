@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Validate error meaasage in create department and sub tier page","Log into the GSA website","SUCCESS","2019-04-30T13:37:46.726-04:00[America/New_York]","0.0","118.09"
+"Validate error meaasage in create department and sub tier page","Submit department without filling value","SUCCESS","2019-04-30T13:39:44.814-04:00[America/New_York]","0.0","12.89"
+"Validate error meaasage in create department and sub tier page","Validating negative scenario department","SUCCESS","2019-04-30T13:39:57.71-04:00[America/New_York]","0.0","107.31"
+"Validate error meaasage in create department and sub tier page","Submit department by filling value","SUCCESS","2019-04-30T13:41:45.026-04:00[America/New_York]","0.0","12.1"
+"Validate error meaasage in create department and sub tier page","Submit department by filling special char","SUCCESS","2019-04-30T13:43:03.836-04:00[America/New_York]","0.0","12.55"
+"Validate error meaasage in create department and sub tier page","Submit subTier without filling value","SUCCESS","2019-04-30T13:44:36.119-04:00[America/New_York]","0.0","25.94"
+"Validate error meaasage in create department and sub tier page","Browser close","SUCCESS","2019-04-30T13:46:01.075-04:00[America/New_York]","0.0","6.14"

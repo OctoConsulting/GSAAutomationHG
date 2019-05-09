@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Validate login with different users admin","Log into the GSA website as createDepartment","SUCCESS","2019-04-30T12:56:01.053-04:00[America/New_York]","0.0","146.48"
+"Validate login with different users admin","Super Admin","SUCCESS","2019-04-30T12:58:27.542-04:00[America/New_York]","0.0","71.97"
+"Validate login with different users admin","edit department","SUCCESS","2019-04-30T12:59:39.514-04:00[America/New_York]","0.0","23.4"
+"Validate login with different users admin","Log into the GSA website as DepartAdmin","SUCCESS","2019-04-30T13:00:09.096-04:00[America/New_York]","0.0","81.77"
+"Validate login with different users admin","Log into the GSA website as SubTierAdmin","SUCCESS","2019-04-30T13:02:39.169-04:00[America/New_York]","0.0","84.48"
+"Validate login with different users admin","Log into the GSA website as officeAdmin","SUCCESS","2019-04-30T13:05:07.411-04:00[America/New_York]","0.0","73.81"
+"Validate login with different users admin","Department created browser sign","SUCCESS","2019-04-30T13:07:24.713-04:00[America/New_York]","0.0","6.19"
