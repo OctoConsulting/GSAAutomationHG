@@ -1,5 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Validate login with different users admin","Office Admin","ERROR","2019-04-30T13:06:21.221-04:00[America/New_York]","0.0","63.49"
-"Editing Request Office Page","My Workspace","SUCCESS","2019-04-30T13:16:35.979-04:00[America/New_York]","0.0","75.76"
-"Editing request office page negative scenarios.","My Workspace","ERROR","2019-04-30T13:48:12.15-04:00[America/New_York]","0.0","58.68"
-"Validate error meaasage in office page","Validation on empty field in request office page","SUCCESS","2019-04-30T13:51:01.107-04:00[America/New_York]","0.0","93.83"

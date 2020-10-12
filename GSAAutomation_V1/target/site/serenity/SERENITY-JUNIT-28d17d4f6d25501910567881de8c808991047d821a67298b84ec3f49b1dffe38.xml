@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Editing Request Office Page" skipped="0" tests="4" time="933.66" timestamp="2019-04-30 01:14:40"><testcase name="Log into the GSA website as createDepartment"/><testcase name="Account name"/><testcase name="My Workspace"/><testcase name="Edit request office positive scenarios"/></testsuite>

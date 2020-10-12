@@ -1,5 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Validate error meaasage in office page","Log into the GSA website as createDepartment","SUCCESS","2019-04-30T13:49:16.492-04:00[America/New_York]","0.0","74.42"
-"Validate error meaasage in office page","Account name","SUCCESS","2019-04-30T13:50:30.911-04:00[America/New_York]","0.0","30.19"
-"Validate error meaasage in office page","Validation on empty field in request office page","SUCCESS","2019-04-30T13:51:01.107-04:00[America/New_York]","0.0","93.83"
-"Validate error meaasage in office page","Department created browser sign out","SUCCESS","2019-04-30T13:56:20.83-04:00[America/New_York]","0.0","6.16"
