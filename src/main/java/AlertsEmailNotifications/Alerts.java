@@ -61,7 +61,7 @@ public class Alerts extends TestBase{
 	WebElement Type4;
 	@FindBy(id="title-input")
 	WebElement Title;
-	@FindBy(xpath="//div[@contenteditable=\"true\"]")
+	@FindBy(xpath="//*[@id=\"cke_1_contents\"]/iframe")
 	WebElement description;
 	@FindBy(xpath="//button[text()='Confirm']")
 	WebElement confirm;

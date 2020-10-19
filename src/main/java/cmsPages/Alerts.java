@@ -61,7 +61,7 @@ public class Alerts extends TestBase{
 	WebElement Type4;
 	@FindBy(id="title-input")
 	WebElement Title;
-	@FindBy(xpath="//div[@contenteditable=\"true\"]")
+	@FindBy(xpath="//label[text()=' Description ']")
 	WebElement description;
 	@FindBy(xpath="//button[text()='Confirm']")
 	WebElement confirm;
@@ -217,7 +217,7 @@ public class Alerts extends TestBase{
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/div/div[6]"));
+				"//*[@id=\"main-container\"]/ng-component/div"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -421,7 +421,20 @@ public class Alerts extends TestBase{
 
 		Type1.click();
 		Title.sendKeys("We are testing System alerts as a informational content");
-		description.sendKeys("we are testing system alerts as a informational content");
+		Thread.sleep(1000);
+		
+		
+		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
@@ -440,8 +453,20 @@ public class Alerts extends TestBase{
 		Type.click();
 		Thread.sleep(1000);
 		Type2.click();
+		Thread.sleep(1000);
 		Title.sendKeys("We are testing System alerts illustrating an error");
-		description.sendKeys("We are testing system alerts as an error");
+		Thread.sleep(4000);
+		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
@@ -452,6 +477,8 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		confirm.click();
 		Thread.sleep(3000);
+	
+		
 //
 //		Dropdown1.click();
 //		Thread.sleep(1000);
@@ -476,7 +503,18 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		Type3.click();
 		Title.sendKeys("testing123 we are testing system alerts as a warning content ");
-		description.sendKeys("we are testing system alerts as a warning content");
+		Thread.sleep(1000);
+		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
@@ -504,8 +542,18 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		Type4.click();
 		Title.sendKeys("testing123 wage determination");
-		description.sendKeys("we are testing system alerts as a wage determination");
-		Thread.sleep(3000);
+		Thread.sleep(1000);
+		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		publish.click();
 		Thread.sleep(3000);
 		confirm.click();

@@ -666,8 +666,8 @@ public void user_creates_each_type_of_alert_so_user_validates_that_they_are_crea
 	alerts.CreateAlerts5();
 	assertTrue("alerts WAS not made informational", alerts.AlertsCheck3());
 
-	//alerts.CreateAlerts6();
-	//assertTrue("alerts WAS not made error", alerts.AlertsCheck4());
+alerts.CreateAlerts6();
+	assertTrue("alerts WAS not made error", alerts.AlertsCheck4());
 
 	alerts.CreateAlerts7();
 	assertTrue("alerts WAS  not made warning", alerts.AlertsCheck5());
