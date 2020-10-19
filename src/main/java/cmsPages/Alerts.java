@@ -435,7 +435,7 @@ public class Alerts extends TestBase{
 	
 		driver.switchTo().defaultContent();
 		//description.sendKeys("we are testing system alerts as a informational content");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		publish.click();
 		Thread.sleep(3000);
 		confirm.click();
@@ -463,11 +463,11 @@ public class Alerts extends TestBase{
 		WebElement body = driver.findElement(By.tagName("body"));
 
 		body.clear(); 
-		body.sendKeys("we are testing system alerts as a informational content");
+		body.sendKeys("we are testing system alerts as a error content");
 	
 		driver.switchTo().defaultContent();
 		//description.sendKeys("we are testing system alerts as a informational content");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		publish.click();
 		Thread.sleep(3000);
 		
@@ -503,8 +503,10 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		Type3.click();
 		Title.sendKeys("testing123 we are testing system alerts as a warning content ");
-		Thread.sleep(1000);
-		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+Thread.sleep(1000);
+		
+		
+		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_189_contents\"]/iframe"));
 
 		driver.switchTo().frame(editorFrame);
 
@@ -542,18 +544,21 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		Type4.click();
 		Title.sendKeys("testing123 wage determination");
-		Thread.sleep(1000);
-		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+Thread.sleep(1000);
+		
+		
+WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
 
-		driver.switchTo().frame(editorFrame);
+driver.switchTo().frame(editorFrame);
 
-		WebElement body = driver.findElement(By.tagName("body"));
+WebElement body = driver.findElement(By.tagName("body"));
 
-		body.clear(); 
-		body.sendKeys("we are testing system alerts as a informational content");
-	
-		driver.switchTo().defaultContent();
-		//description.sendKeys("we are testing system alerts as a informational content");
+body.clear(); 
+body.sendKeys("we are testing system alerts as a informational content");
+
+driver.switchTo().defaultContent();
+//description.sendKeys("we are testing system alerts as a informational content");
+Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
 		confirm.click();
