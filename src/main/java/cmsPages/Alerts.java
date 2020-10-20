@@ -61,8 +61,7 @@ public class Alerts extends TestBase{
 	WebElement Type4;
 	@FindBy(id="title-input")
 	WebElement Title;
-	@FindBy(xpath="//label[text()=' Description ']")
-	WebElement description;
+	
 	@FindBy(xpath="//button[text()='Confirm']")
 	WebElement confirm;
 	@FindBy(xpath="//button[text()='Cancel']")
@@ -456,7 +455,7 @@ public class Alerts extends TestBase{
 		Thread.sleep(1000);
 		Title.sendKeys("We are testing System alerts illustrating an error");
 		Thread.sleep(4000);
-		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+		WebElement editorFrame = driver.findElement(By.xpath("/html/body/app/main/ng-component/div/div[5]/alert-edit/form/div[1]/div[1]/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/iframe"));
 
 		driver.switchTo().frame(editorFrame);
 
@@ -506,7 +505,7 @@ public class Alerts extends TestBase{
 Thread.sleep(1000);
 		
 		
-		WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_189_contents\"]/iframe"));
+		WebElement editorFrame = driver.findElement(By.xpath("/html/body/app/main/ng-component/div/div[5]/alert-edit/form/div[1]/div[1]/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/iframe"));
 
 		driver.switchTo().frame(editorFrame);
 
@@ -547,7 +546,7 @@ Thread.sleep(1000);
 Thread.sleep(1000);
 		
 		
-WebElement editorFrame = driver.findElement(By.xpath("//*[@id=\"cke_1_contents\"]/iframe"));
+WebElement editorFrame = driver.findElement(By.xpath("/html/body/app/main/ng-component/div/div[5]/alert-edit/form/div[1]/div[1]/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/iframe"));
 
 driver.switchTo().frame(editorFrame);
 
@@ -687,7 +686,20 @@ Thread.sleep(3000);
 		Thread.sleep(1000);
 		Type2.click();
 		Title.sendKeys("We are testing System alerts illustrating an error");
-		description.sendKeys("We are testing system alerts as an error");
+Thread.sleep(1000);
+		
+		
+		WebElement editorFrame = driver.findElement(By.xpath("/html/body/app/main/ng-component/div/div[5]/alert-edit/form/div[1]/div[1]/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
@@ -733,7 +745,20 @@ Thread.sleep(3000);
 		Thread.sleep(1000);
 		Type2.click();
 		Title.sendKeys("We are testing System alerts illustrating an error");
-		description.sendKeys("We are testing system alerts as an error");
+Thread.sleep(1000);
+		
+		
+		WebElement editorFrame = driver.findElement(By.xpath("/html/body/app/main/ng-component/div/div[5]/alert-edit/form/div[1]/div[1]/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/iframe"));
+
+		driver.switchTo().frame(editorFrame);
+
+		WebElement body = driver.findElement(By.tagName("body"));
+
+		body.clear(); 
+		body.sendKeys("we are testing system alerts as a informational content");
+	
+		driver.switchTo().defaultContent();
+		//description.sendKeys("we are testing system alerts as a informational content");
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
