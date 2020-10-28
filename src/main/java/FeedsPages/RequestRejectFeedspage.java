@@ -138,9 +138,9 @@ public class RequestRejectFeedspage extends TestBase{
 		supervisoremail.sendKeys(prop.getProperty("ContractOppAdmin"));
 		Thread.sleep(4000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
-		organizationame.sendKeys("General Services");
+		organizationame.sendKeys("4764ED");
 		
-		GSAoption.click();
+	driver.findElement(By.xpath("//*[@id=\"federalHierarchy_100176853\"]")).click();
 		organizationame.sendKeys(Keys.ENTER);
 		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
 		Thread.sleep(4000);
