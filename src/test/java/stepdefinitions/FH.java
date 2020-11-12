@@ -231,7 +231,7 @@ public class FH extends TestBase {
 	@When("^a dept Admin of FH logs in$")
 	public void a_dept_Admin_of_FH_logs_in() throws Exception {
 		LoginGov = new loginGov();
-		LoginGov.GeneralLogIn(prop.getProperty("DeptAdmin"), prop.getProperty("password"), "3JICO7FJM22XLKZV");
+		LoginGov.GeneralLogIn(prop.getProperty("DeptAdmin"), prop.getProperty("password2"), "6AZXNJNTYMUVWFX6");
 	}
 
 	@Then("^dept admin will validate all appropriate functions on their landing pages\\(FH link is visible, createL(\\d+)/L(\\d+) are applicable\\. Administrator icons are visible and Sorts and pagination is working\\)$")

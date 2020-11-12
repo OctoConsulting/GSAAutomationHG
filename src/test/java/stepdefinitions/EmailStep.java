@@ -144,7 +144,7 @@ public class EmailStep extends TestBase {
 
 		emailCheck = new EmailCheck();
 
-		emailCheck.goToFedMailInbox(prop.getProperty("GMAIL_USERNAME2"), prop.getProperty("USERPASS"));
+		emailCheck.goToFedMailInbox(prop.getProperty("GMAIL_USERNAME"), prop.getProperty("USERPASS"));
 		String emailSubject = emailCheck.captureTitleFromLastEmail(0);
 		String emailBody = emailCheck.captureEmailMessage(0);
 		String emailToAndFrom = emailCheck.captureToAndFromInEmail();

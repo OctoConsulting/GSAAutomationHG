@@ -44,13 +44,17 @@ public static Logger logger = LoggerFactory.getLogger(EmailCheck.class);
 		driver.switchTo().window(tab_handles.get(tab_handles.size() - 1));
 		delay(2);
 		// if (nooffetch == 1) {
-		driver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys(username);
+		//driver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys(username);
+		//delay(3);
+		//driver.findElement(By.id("identifierNext")).click();
+		//delay(3);
+		//driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")).click();
+		//delay(5);
+		
+		driver.findElement(By.xpath("//*[@class='gb_Ia gbii']")).click();
 		delay(3);
-		driver.findElement(By.id("identifierNext")).click();
-		delay(3);
-		driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Octotest Account3')]")).click();
 		delay(5);
-
 	}
 	public String captureTitleFromLastEmail(int emailNo) {
 		delay(3);

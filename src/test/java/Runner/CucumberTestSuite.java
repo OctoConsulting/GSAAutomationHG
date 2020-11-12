@@ -6,7 +6,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(plugin = { "pretty" }, features = "src\\test\\resources\\features-Integration6",
+@CucumberOptions(plugin = { "pretty" }, features = "src\\test\\resources\\features\\AlertsAndNotifications\\DepAdminEmailNotification.feature",
 glue= {"stepdefinitions"},
 //tags =  {"@Pos, @Neg"},]]
 monochrome = true,
