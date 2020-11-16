@@ -39,7 +39,7 @@ public class CreateOffice extends TestBase {
 	WebElement ActionsOffice;
 	@FindBy(id = "ofcAAC-input")
 	WebElement Aac;
-	@FindBy(xpath= "//button[@type=\"button\"]")
+	@FindBy(xpath= "//button[@class='sam-ui button primary']")
 	WebElement submit;
 	@FindBy(xpath = "//*[@id=\"ofcName-input\"]")
 	WebElement ofcName;
@@ -2096,12 +2096,12 @@ Thread.sleep(4000);
 	}
 	public void SubmitOffice() throws InterruptedException {
 		Thread.sleep(3000);
-
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
 		Thread.sleep(3000);
 
 		submit.click();
-		
+		Thread.sleep(3000);
+
 		TimeUnit.SECONDS.sleep(120);
 
 
