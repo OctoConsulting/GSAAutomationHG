@@ -1,6 +1,7 @@
-Feature:FH Edit Offices on comp 
-Scenario:User test edit functionalities of name, start date, end dates for office creation. User test office is no end date and then test an office with end date because there are different set of rules when an end date is in place for creation
+Feature: FH Edit Offices on comp
 
+
+Scenario: User test edit functionalities of name, start date, end dates for office creation. User test office is no end date and then test an office with end date because there are different set of rules when an end date is in place for creation
 
 Given a FH PMO logs in 
 When FH user goes into FH Homepage

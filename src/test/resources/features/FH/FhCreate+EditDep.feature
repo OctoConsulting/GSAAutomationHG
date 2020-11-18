@@ -1,7 +1,7 @@
+Feature: FH Create+Edit department
 
-Feature:FH Create+Edit department
-Scenario:User try to create and edit departments. Only FH pmo can do so
 
+Scenario: User try to create and edit departments. Only FH pmo can do so
 
 Given a FH PMO logs in 
 When FH user goes into FH Homepage

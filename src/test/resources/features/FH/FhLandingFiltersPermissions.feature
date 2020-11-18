@@ -1,6 +1,7 @@
-Feature:FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
+Feature: FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
 
-Scenario:FH Sorting/Pagination/Creating/editing/Administrator rights/FH Widget 
+
+Scenario: FH Sorting/Pagination/Creating/editing/Administrator rights/FH Widget 
 FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
 	
 Given a FH PMO logs in

@@ -679,7 +679,8 @@ public class CreateEditDep extends TestBase {
 		FHSearch.sendKeys(Keys.ENTER);
 		FHSearchDepAgency.click();
 		Thread.sleep(1000);
-
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		EditSection.click();
 		Thread.sleep(2000);
 

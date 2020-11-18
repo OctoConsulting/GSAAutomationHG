@@ -1,7 +1,7 @@
+Feature: FH Create Office Postive Flow- Running Postive scenarios flow
 
-Feature:FH Create Office Postive Flow- Running Postive scenarios flow
-Scenario:User try to create office Postive  Flow. Only FH pmo can do so, Running all positive scenarios for individuals fields
 
+Scenario: User try to create office Postive  Flow. Only FH pmo can do so, Running all positive scenarios for individuals fields
 
 Given a FH PMO logs in 
 When FH user goes into FH Homepage
