@@ -75,7 +75,7 @@ public class FilterFeeds extends TestBase {
 	@FindBy(xpath = "//*[text()='Opp Attachment Request']")
 	WebElement OppAttachmentRequestTab;
 	public static final By FEED_ITEM = By.className("msg-feed-item");
-	public static final By FEED_ITEM2 = By.xpath("//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]");
+	public static final By FEED_ITEM2 = By.xpath("//*[@id=\"main-container\"]/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]");
 	public FilterFeeds() {
 		PageFactory.initElements(driver, this);
 	}
@@ -412,7 +412,7 @@ Thread.sleep(4000);
 			System.out.println("Test " + webElement.getText());
 			String Requesttext = webElement.getText();
 			// ADD IN OR REJECTED
-			if (Requesttext.contains("OCTO CONSULTING GROUP")) {
+			if (Requesttext.contains("Octo Consulting Group")) {
 				verify = true;
 			}
 

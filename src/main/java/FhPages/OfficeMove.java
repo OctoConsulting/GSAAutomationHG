@@ -181,7 +181,7 @@ public class OfficeMove extends TestBase {
 	WebElement FinancialAssistanceFundingEndDate3;
 	@FindBy(id = "ofcAAC-input")
 	WebElement Aac;
-	@FindBy(id = "selectOrgHistory")
+	@FindBy(xpath = "//*[@id='selectOrgHistory']")
 	WebElement History;
 	@FindBy(xpath = "//button[@type='button']")
 	WebElement submit;
@@ -218,6 +218,8 @@ public class OfficeMove extends TestBase {
 	}
 
 	public boolean ActionsOptions() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		try {
 
@@ -874,11 +876,12 @@ public class OfficeMove extends TestBase {
 		boolean verify;
 
 		// VALIDATION FOR "YOU"
+		driver.findElement(By.id("selectOrgHistory")).click();
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.id("selectOrgHistory"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
-		if (Requesttext.contains("Moved - ")) {
+		if (Requesttext.contains("Moved")) {
 			verify = true;
 		}
 
@@ -985,6 +988,9 @@ public class OfficeMove extends TestBase {
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 		Thread.sleep(3000);
 		Moveedit.click();
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		ActionsOffice.click();
 		edit2.click();
 		// validate
@@ -1110,7 +1116,7 @@ public class OfficeMove extends TestBase {
 
 		Thread.sleep(4000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 	}
 
 	public boolean valStartDate() {
@@ -1683,7 +1689,7 @@ public class OfficeMove extends TestBase {
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver
-				.findElement(By.xpath("//*[@id=\"primary-content\"]/ng-component/div/div[1]/div[5]/div[5]"));
+				.findElement(By.xpath("//*[@id='primary-content']/ng-component/div/div[1]/div[5]/div[3]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1766,6 +1772,9 @@ public class OfficeMove extends TestBase {
 	}
 
 	public void NoEndDateMove() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		ActionsOffice.click();
 		Move.click();
 		Thread.sleep(2000);
@@ -1798,6 +1807,7 @@ public class OfficeMove extends TestBase {
 	public void NoEndDateMove2() throws InterruptedException {
 		ConfirmMoveOffice.click();
 		NoticeYes.click();
+		Thread.sleep(3000);
 		History.click();
 	}
 
@@ -1971,7 +1981,7 @@ public class OfficeMove extends TestBase {
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver
-				.findElement(By.xpath("//*[@id=\"primary-content\"]/ng-component/div/div[1]/div[5]/div[4]/span[2]"));
+				.findElement(By.xpath("//*[@id=\"primary-content\"]/ng-component/div/div[1]/div[5]/div[2]/span[2]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 

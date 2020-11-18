@@ -116,6 +116,7 @@ public class CreateEditSubtier extends TestBase{
 
 	}
 	public void AddEndDate() throws InterruptedException {
+		Thread.sleep(2000);
 		EditSection.click();
 		Thread.sleep(2000);
 

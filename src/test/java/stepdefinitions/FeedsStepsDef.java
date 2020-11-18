@@ -364,7 +364,7 @@ public void this_request_should_be_visible_in_feeds_Received_for_same_domain_use
 		Assert.assertTrue(verify);
 		assertTrue("Approved status isnt there", Feeds.validatestatusApproved());
 		WebElement LocatorForTextWanted = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
+				"//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 
 		requestRejectFeedspage.feedValidation("Sanzedah Rahman", prop.getProperty("AssignedRolename"),
 				prop.getProperty("OrgName"), prop.getProperty("DomainName"));
@@ -405,7 +405,7 @@ public void this_request_should_be_visible_in_feeds_Received_for_same_domain_use
 		boolean verify;
 
 		WebElement LocatorForTextWanted = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
+				"//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 
 		String Requesttext = LocatorForTextWanted.getText();
 
@@ -447,7 +447,7 @@ public void this_request_should_be_visible_in_feeds_Received_for_same_domain_use
 		boolean verify;
 
 		WebElement LocatorForTextWanted = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
+				"//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 
 		String Requesttext = LocatorForTextWanted.getText();
 
@@ -1109,7 +1109,8 @@ public void this_request_should_be_visible_in_Sent_tab_for_the_requester_for_a_l
 
 	Feeds.intoSent();
 	
-
+	driver.navigate().refresh();
+	
 	setTimestampA(Feeds.getLastRequestRequestTimestamp());
 
 	System.out.println("TIMESTAMP A:" + getTimestampA());

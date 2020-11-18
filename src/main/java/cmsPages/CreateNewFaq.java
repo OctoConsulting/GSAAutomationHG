@@ -27,9 +27,9 @@ public class CreateNewFaq extends TestBase
 	WebElement validatenewfaq;
 	@FindBy(xpath = "//*[@id=\"title\"]")
 	WebElement faqquestion;
-	@FindBy(xpath="/html/body/app/main/ng-component/page/div/div/div[2]/div/form-only/div/div/div/div[2]/div[2]/sam-tabs/sam-tab[1]/div/form/div/sam-rich-text-editor/sam-label-wrapper/div/ckeditor/div/div/div/div/div")
+	@FindBy(xpath="//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
 	WebElement faqresponse;
-	@FindBy(xpath = "//*[@id=\"keywords-ac-textarea\"]")
+	@FindBy(xpath = "//*[@id='keywords-ac-textarea']")
 	WebElement faqkeyword;
 	@FindBy(xpath = "//input[@id=\"toggle faq\"]")
 	WebElement displayonhomepage;
@@ -74,8 +74,10 @@ public class CreateNewFaq extends TestBase
 	}
 
 	public void generatefaqresponse() {
+		WebElement frame = driver.findElement(By.xpath("//iframe[@class='cke_wysiwyg_frame cke_reset']"));
+		driver.switchTo().frame(frame);
 		faqresponse.sendKeys(prop.getProperty("CmsResponse"));
-				
+		driver.switchTo().defaultContent();		
 
 	}
 

@@ -1,6 +1,7 @@
+Feature: FH ORG PICKER
 
-Feature:FH ORG PICKER
-Scenario:Feature:FH org picker endpoint use in KIT
+
+Scenario: FH org picker endpoint use in KIT
 
 Given a user goes to Org Picker endpoint
 Then the user will validate departments are all in order

@@ -1,5 +1,7 @@
-Feature:FH TAS code validation
-Scenario:There is a department which currently have a TAS Code but has an inactive office say with AAC 123456. Now, I update the TAS code to 98 and try to re-activate the inactive office by clicking edit and removing end date and getting an error. 
+Feature: FH TAS code validation
+
+
+Scenario: There is a department which currently have a TAS Code but has an inactive office say with AAC 123456. Now, I update the TAS code to 98 and try to re-activate the inactive office by clicking edit and removing end date and getting an error. 
 After their internal tech discussions, the dev team decided to provide below error message when activating an office that doesnt meet the AAC rules
 " The TAS-2 Code for the parent department has changed. Please work with your Federal Hierarchy administrator to update the AAC for this office".
 User tries to change the TAS code for a department which has active offices and gets the error message "This department has offices(s) with AAC codes that do not start with the provided TAS-2 Code."

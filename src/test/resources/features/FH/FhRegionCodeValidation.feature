@@ -1,6 +1,7 @@
-Feature:FH Region code validation scenarios 
-Scenario:User(Super admin) test Region code validation scenarios both negative and positive 
+Feature: FH Region code validation scenarios
 
+
+Scenario: User(Super admin) test Region code validation scenarios both negative and positive 
 
 Given a FH PMO logs in 
 When FH user goes into FH Homepage

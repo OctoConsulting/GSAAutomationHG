@@ -37,7 +37,7 @@ public class EditOffice extends TestBase {
 	WebElement FHSearch;
 	@FindBy(xpath = "//a[@class=\"federal-hierarchy-org-item-title\"]")
 	WebElement FHSearchDepAgency;
-	@FindBy(xpath = "//a[@href=\"/fh/500154753\"]")
+	@FindBy(xpath = "//a[@class='federal-hierarchy-org-item-title']")
 	WebElement FHSearchDepAgency2;
 	@FindBy(xpath = "//button[text()=' Create Office ']")
 	WebElement CreateOffice;
@@ -68,7 +68,7 @@ public class EditOffice extends TestBase {
 	WebElement city;
 	@FindBy(id = "Mailing-Addressstate")
 	WebElement state;
-	@FindBy(xpath = "//button[text()=' Confirm ']")
+	@FindBy(xpath = "//*[text()=' Confirm ']")
 	WebElement OfficeEditConfirmation;
 	@FindBy(id = "resultItem_0")
 	WebElement countryChoice;
@@ -741,7 +741,7 @@ public void TestingEndDate6comp() throws InterruptedException {
 	enddate1.clear();
 	enddate2.clear();
 	enddate3.clear();
-	enddate1.sendKeys("01132021");
+	enddate1.sendKeys("05132021");
 	((JavascriptExecutor) driver).executeScript("scroll(0,9000)");
 
 	OfficeEditConfirmation.click();
@@ -2391,7 +2391,9 @@ public void extra2() throws InterruptedException {
 	FHSearch.sendKeys(Keys.ENTER);
 
 	FHSearchDepAgency.click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
+	driver.navigate().refresh();
+	Thread.sleep(2000);
 	ActionsOffice.click();
 	edit2.click();
 	Thread.sleep(3000);

@@ -938,7 +938,7 @@ public void the_user_will_edit_the_Subtier() throws Exception {
 
 @Then("^FH user will validate that the subtier has been created$")
 public void fh_user_will_validate_that_the_subtier_has_been_created() throws Exception {
-	assertTrue("NEW Subtier WASNT MADE", createEditDep.isSuccessBannerThere2());
+	//assertTrue("NEW Subtier WASNT MADE", createEditDep.isSuccessBannerThere2());
 }
 @Then("^FH user will validate that the subtier has been created after edit$")
 public void fh_user_will_validate_that_the_subtier_has_been_created_after_edit() throws Exception {
@@ -2119,7 +2119,8 @@ public void only_active_offices_can_be_moved_i_e_inactive_offices_and_offices_th
 	assertFalse("office move issue2",officeMove.PermissionValidation1());
 	
 	
-	officeMove.SearchActiveOffice();;
+	officeMove.SearchActiveOffice();
+	driver.navigate().refresh();
 	assertTrue("office move issue1",officeMove.ActionsOptions());
 	officeMove.MovePermission();
 

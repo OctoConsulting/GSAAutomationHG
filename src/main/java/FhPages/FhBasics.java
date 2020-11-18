@@ -46,11 +46,11 @@ public class FhBasics extends TestBase {
 	WebElement DEPT26Dep;
 	@FindBy(xpath = "//span[text()=' 47QDCA ']")
 	WebElement ResultIAE2;
-	@FindBy(xpath = "//div[text()=' 075']")
+	@FindBy(xpath = "//*[text()='075']")
 	WebElement ResultHHR;
 	@FindBy(xpath = "//span[text()=' 1625RJ ']")
 	WebElement ResultDOL;
-	@FindBy(xpath = "//div[text()=' 4732']")
+	@FindBy(xpath = "//*[text()='4732']")
 	WebElement ResultGSAL2;
 	@FindBy(xpath = "//a[text()='Clear Filters']")
 	WebElement ClearFH;
