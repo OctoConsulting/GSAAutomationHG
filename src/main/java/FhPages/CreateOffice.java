@@ -226,8 +226,11 @@ public class CreateOffice extends TestBase {
 		return false;
 	}
 
-	public void CreateOfficeTab() {
-		
+	public void CreateOfficeTab() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+
 		CreateOffice.click();
 	}
 

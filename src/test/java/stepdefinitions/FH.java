@@ -2120,7 +2120,7 @@ public void only_active_offices_can_be_moved_i_e_inactive_offices_and_offices_th
 	
 	
 	officeMove.SearchActiveOffice();
-	driver.navigate().refresh();
+	//driver.navigate().refresh();
 	assertTrue("office move issue1",officeMove.ActionsOptions());
 	officeMove.MovePermission();
 

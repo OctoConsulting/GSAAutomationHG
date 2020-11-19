@@ -48,7 +48,7 @@ public class OfficeMove extends TestBase {
 
 	@FindBy(xpath = "//a[@href=\"/fh/500155234\"]")
 	WebElement InactiveOFF;
-	@FindBy(xpath = "//a[@href=\"/fh/500154944\"]")
+	@FindBy(xpath = "//a[@href='/fh/500154944']")
 	WebElement activeOFF;
 	@FindBy(xpath = "//a[@href=\"/fh/500155263\"]")
 	WebElement MoveSubtier;
@@ -195,13 +195,12 @@ public class OfficeMove extends TestBase {
 	}
 
 	public void MovePermission() throws InterruptedException {
-
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.navigate().refresh();
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
+		driver.navigate().refresh();
 		ActionsOffice.click();
-
+		
 	}
 
 	public boolean PermissionValidation1() throws InterruptedException {
@@ -221,6 +220,9 @@ public class OfficeMove extends TestBase {
 		Thread.sleep(2000);
 		driver.navigate().refresh();
 		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+
 		try {
 
 			return ActionsOffice.isDisplayed();
@@ -284,7 +286,7 @@ public class OfficeMove extends TestBase {
 		Thread.sleep(3000);
 		FHsEARCH.sendKeys(Keys.ENTER);
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		activeOFF.click();
 	}
 
@@ -1034,6 +1036,8 @@ public class OfficeMove extends TestBase {
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 		Thread.sleep(3000);
 		MoveSubtier.click();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
 		CreateOffice.click();
 
 		Random rand = new Random();
@@ -1475,8 +1479,9 @@ public class OfficeMove extends TestBase {
 		FHBreadcrumbLink.click();
 	}
 
-	public void VersionClick() {
+	public void VersionClick() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@id=\"selectOrgHistory\"]/option[2]")).click();
+		Thread.sleep(3000);
 	}
 
 	public void VersionClick2() {

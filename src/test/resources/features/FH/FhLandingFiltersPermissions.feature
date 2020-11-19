@@ -20,4 +20,4 @@ When a non fed user log in
 Then this NonFed will validate FH link not on workspace, and No Admin rights on fh
 #And Browser closes
 Then a fed user with no roles signs and validates that FH widget is visible without full counts
-#And Browser closes
+And Browser closes
