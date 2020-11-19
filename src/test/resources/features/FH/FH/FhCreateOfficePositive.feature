@@ -1,6 +1,6 @@
 Feature: FH Create Office Postive Flow- Running Postive scenarios flow
 
-
+@FH @IntegrationFH
 Scenario: User try to create office Postive  Flow. Only FH pmo can do so, Running all positive scenarios for individuals fields
 
 Given a FH PMO logs in 

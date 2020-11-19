@@ -1,6 +1,6 @@
 Feature: FH Office Move Functionality for office types, versions WITHOUT END DATE before and after move
 
-
+@FH @IntegrationFH
 Scenario: flow with no end date move created, go into updated and check the end date as todays date after move.Check all versions to match corrected end dates if needed. Do move again and validate correct versions including a moved version 
 
 Given a FH PMO logs in 

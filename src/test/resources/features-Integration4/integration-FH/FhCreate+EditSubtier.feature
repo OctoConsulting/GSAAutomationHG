@@ -1,4 +1,6 @@
-Feature:FH Create+EditSubtier
+Feature: FH Create+EditSubtier
+
+
 Scenario:User try to create and edit Subtiers. Only FH pmo can do so
 
 Given a FH PMO logs in 

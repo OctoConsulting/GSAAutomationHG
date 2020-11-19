@@ -1,6 +1,6 @@
 Feature: FH ORG PICKER Validation
 
-
+@FH @IntegrationFH
 Scenario: FH org picker validation for contracting validation within a L2[argriculture]
 
 Given a contracting officer logs in within a L2

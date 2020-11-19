@@ -1,6 +1,6 @@
 Feature: FH events page for dep admin
 
-
+@FhEvents @IntegrationFHEvents @IntegrationFH
 Scenario: FH events page filtering and counts for fh dept admin
 
 Given a dept Admin of FH logs in

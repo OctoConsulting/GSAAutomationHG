@@ -1,6 +1,6 @@
 Feature: FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
 
-
+@FH @IntegrationFH
 Scenario: FH Sorting/Pagination/Creating/editing/Administrator rights/FH Widget 
 FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
 	

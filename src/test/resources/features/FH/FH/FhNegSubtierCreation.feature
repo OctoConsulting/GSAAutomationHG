@@ -1,6 +1,6 @@
 Feature: FH NEG Create+EditSubtier
 
-
+@FH @IntegrationFH
 Scenario: User try to create and edit Subtiers negative scenarios. Only FH pmo can do so
 
 Given a FH PMO logs in 

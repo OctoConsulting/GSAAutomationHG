@@ -1,6 +1,6 @@
 Feature: FH searches pages/searching permissions for FH PMO/nonFH user/dept admin for fh/subtier admin
 
-
+@FH @IntegrationFH
 Scenario: Validations on searches for status/organization type
 
 Given a FH PMO logs in 
