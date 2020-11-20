@@ -19,9 +19,9 @@ public class CreateEditSubtier extends TestBase{
 	static String randomSubtierTitle;
 	@FindBy(xpath = "//a[text()='Federal Hierarchy']")
 	WebElement FHBreadcrumbLink;
-	@FindBy(xpath = "//input[@aria-label=\"search federal hierarchy\"]")
+	@FindBy(xpath = "//input[@aria-label='search federal hierarchy']")
 	WebElement FHSearch;
-	@FindBy(xpath = "//a[@class=\"federal-hierarchy-org-item-title\"]")
+	@FindBy(xpath = "//a[@class='federal-hierarchy-org-item-title']")
 	WebElement FHSearchDepAgency;
 	@FindBy(xpath = "//button[text()=' Create Sub-Tier ']")
 	WebElement CreateSubtier;
@@ -139,9 +139,7 @@ public class CreateEditSubtier extends TestBase{
 
     System.out.println(dateFormat.format(currentDatePlusOne));
     DeptAgencyEndDate.sendKeys(dateFormat.format(currentDatePlusOne));
-		
 		DeptAgencySubmit.click();
-
 		Thread.sleep(3000);
 
 	}
@@ -461,6 +459,7 @@ FHBreadcrumbLink.click();
 Thread.sleep(3000);
 FHSearch.sendKeys("WEDW");
 FHSearch.sendKeys(Keys.ENTER);
+Thread.sleep(2000);
 FHSearchDepAgency.click();
 Thread.sleep(2000);
 EditSection.click();
@@ -599,6 +598,8 @@ EditSection.click();
 
 
 	public void CreateSubtier() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.navigate().refresh();
 		CreateSubtier.click();
 		Thread.sleep(3000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,200)");

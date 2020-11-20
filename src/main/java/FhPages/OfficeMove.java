@@ -196,9 +196,6 @@ public class OfficeMove extends TestBase {
 
 	public void MovePermission() throws InterruptedException {
 		Thread.sleep(5000);
-		driver.navigate().refresh();
-		Thread.sleep(5000);
-		driver.navigate().refresh();
 		ActionsOffice.click();
 		
 	}
@@ -217,8 +214,6 @@ public class OfficeMove extends TestBase {
 	}
 
 	public boolean ActionsOptions() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.navigate().refresh();
 		Thread.sleep(2000);
 		driver.navigate().refresh();
 		Thread.sleep(2000);
@@ -771,7 +766,7 @@ public class OfficeMove extends TestBase {
 	}
 
 	public boolean isSuccessBannerThere() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		return SucessBanner2.isDisplayed();
 	}
 
@@ -851,8 +846,6 @@ public class OfficeMove extends TestBase {
 
 	public void OfficeMoveFlowPOS4() throws InterruptedException {
 		History.click();
-		;
-
 	}
 
 	public boolean HistoryValidation() {
@@ -1167,7 +1160,7 @@ public class OfficeMove extends TestBase {
 				"/html/body/app/main/ng-component/div/div/div[2]/page/div/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/table/tr[2]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
-
+		System.out.println("Validate status is === " + Requesttext);
 		if (Requesttext.contains("ACTIVE")) {
 			verify = true;
 		}
@@ -1464,6 +1457,7 @@ public class OfficeMove extends TestBase {
 
 	public void MoveEdit8() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@id=\"selectOrgHistory\"]/option[1]")).click();
+		Thread.sleep(2000);
 		ActionsOffice.click();
 		Move.click();
 		Thread.sleep(2000);

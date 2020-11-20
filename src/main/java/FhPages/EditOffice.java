@@ -25,7 +25,7 @@ public class EditOffice extends TestBase {
 	WebElement ProfileEditCode;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div/aside/div/ul/li[2]/a")
 	WebElement subtierlink;
-	@FindBy(xpath = "//*[@id=\"hierarchy-content\"]/div/div[4]/div[1]/a")
+	@FindBy(xpath = "//*[@id='hierarchy-content']/div/div[4]/div[1]/a")
 	WebElement officelink;
 	@FindBy(xpath = "//*[@id=\"primary-content\"]/ng-component/div/div[1]/div[1]/button")
 	WebElement createlink;
@@ -223,7 +223,7 @@ public class EditOffice extends TestBase {
 	WebElement POLICEPROCUREMENT;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement ActionDep;
-	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
+	@FindBy(xpath = "//*[@id='main-container']/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement USDep;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement DEPT26Dep;
@@ -2609,7 +2609,7 @@ public boolean TASValidation2() throws InterruptedException {
 	}
 	public void EditTas2() throws InterruptedException {
 		Thread.sleep(3000);
-		
+		driver.navigate().refresh();
 		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
 		ProfileEditCode.click();
 		Tas.clear();
