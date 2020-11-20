@@ -1982,6 +1982,7 @@ public void a_user_searches_a_department_with_no_tas_code() throws Exception {
 	fhBasics.SearchUS();
 	   assertTrue("dep results are not there", fhBasics.USDataThere());
 	   editOffice.intoUSDep();
+	   Thread.sleep(3000);
 		editOffice.EditTas();
 	
 		//editOffice.EditTas();

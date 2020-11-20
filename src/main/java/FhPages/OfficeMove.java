@@ -297,7 +297,7 @@ public class OfficeMove extends TestBase {
 		FHsEARCH.sendKeys(Keys.ENTER);
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 		driver.findElement(By.id("Inactive")).click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		InactiveOFF.click();
 	}
 
@@ -770,7 +770,8 @@ public class OfficeMove extends TestBase {
 
 	}
 
-	public boolean isSuccessBannerThere() {
+	public boolean isSuccessBannerThere() throws InterruptedException {
+		Thread.sleep(5000);
 		return SucessBanner2.isDisplayed();
 	}
 
@@ -1502,7 +1503,7 @@ public class OfficeMove extends TestBase {
 		Thread.sleep(3000);
 		FHsEARCH.sendKeys(Keys.ENTER);
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		MoveSubtier.click();
 		CreateOffice.click();
 

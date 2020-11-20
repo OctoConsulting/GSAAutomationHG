@@ -423,6 +423,8 @@ FHSearch.sendKeys("Act Sub-tier");
 FHSearch.sendKeys(Keys.ENTER);
 FHSearchDepAgency.click();
 Thread.sleep(2000);
+driver.navigate().refresh();
+Thread.sleep(2000);
 EditSection.click();
 Thread.sleep(2000);
 

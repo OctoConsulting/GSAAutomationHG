@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features\\FH1",
+		features = "src\\test\\resources\\features\\FH2",
 		glue = {"stepdefinitions"},
 		//tags =  {"@FH"},
 		monochrome = true,
