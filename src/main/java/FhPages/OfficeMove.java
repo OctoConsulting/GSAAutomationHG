@@ -183,7 +183,7 @@ public class OfficeMove extends TestBase {
 	WebElement Aac;
 	@FindBy(xpath = "//*[@id='selectOrgHistory']")
 	WebElement History;
-	@FindBy(xpath = "//button[@type='button']")
+	@FindBy(xpath = "//button[@class='sam-ui button primary']")//button[@type='button']")
 	WebElement submit;
 	@FindBy(xpath = "//h3[text()='Success!']")
 	WebElement SucessBanner2;
@@ -1420,7 +1420,7 @@ public class OfficeMove extends TestBase {
 	public void MoveEdit6() throws InterruptedException {
 		Thread.sleep(4000);
 		Thread.sleep(4000);
-		((JavascriptExecutor) driver).executeScript("scroll(0,300)");
+		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
 		Thread.sleep(3000);
 		submit.click();
 
