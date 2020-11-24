@@ -1,6 +1,6 @@
 Feature: FH Create+Edit department
 
-@FH @IntegrationFH
+@FH @FH2 @IntegrationFH
 Scenario: User try to create and edit departments. Only FH pmo can do so
 
 Given a FH PMO logs in 

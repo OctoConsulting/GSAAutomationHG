@@ -1,6 +1,6 @@
 Feature: FH TAS code validation
 
-@FH @IntegrationFH
+@FH @FH2 @IntegrationFH
 Scenario: There is a department which currently have a TAS Code but has an inactive office say with AAC 123456. Now, I update the TAS code to 98 and try to re-activate the inactive office by clicking edit and removing end date and getting an error. 
 After their internal tech discussions, the dev team decided to provide below error message when activating an office that doesnt meet the AAC rules
 " The TAS-2 Code for the parent department has changed. Please work with your Federal Hierarchy administrator to update the AAC for this office".

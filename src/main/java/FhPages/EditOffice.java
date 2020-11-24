@@ -98,7 +98,7 @@ public class EditOffice extends TestBase {
 	WebElement StartDateError;
 	@FindBy(xpath = "//div[text()=' Showing  1-1  of  1  results ']")
 	WebElement ValidationForsearch;
-	@FindBy(xpath = "//span[text()=' Office name is required ']")
+	@FindBy(xpath = "//span[text()=' This field is required ']")//span[text()=' Office name is required ']")
 	WebElement BlankError;
 	@FindBy(xpath = "//h1[text()=' Edit Office Confirmation ']")
 	WebElement EditOfficeConfirm;
@@ -1179,6 +1179,8 @@ public void intoOffice3() throws InterruptedException {
 public void intoOffice4() throws InterruptedException {
 	FHSearchDepAgency2.click();
 	Thread.sleep(1000);
+	driver.navigate().refresh();
+	Thread.sleep(2000);
 	ActionsOffice.click();
 	edit2.click();
 	Thread.sleep(3000);

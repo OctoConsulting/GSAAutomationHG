@@ -1,6 +1,6 @@
 Feature: FH Office Move Functionality for office types, versions
 
-@FH @IntegrationFH
+@FH @FH2 @IntegrationFH
 Scenario: Offices that are not are moved user cannot edit start dates, office type(Correct versions),Office move twice with correct versions.User Pick a office with no changes and EDIT city and validate version.Then move THE SAME office and check the version there should be four version -current,created,updated, updated. Current version has history tag with blue lining.
 
 Given a FH PMO logs in 

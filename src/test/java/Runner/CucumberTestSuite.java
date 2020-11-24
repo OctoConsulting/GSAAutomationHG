@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features\\FH2\\OfficeMoveValidationsWithEndDate.feature",
+		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		//tags =  {"@FH2"},
+		tags =  {"@FH3"},
 		monochrome = true,
         dryRun = false)
 

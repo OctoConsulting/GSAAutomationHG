@@ -1,6 +1,6 @@
 Feature: FH Create Office Negative Flow- Running all negative scenarios for individuals fields
 
-
+@FH @FH2 @IntegrationFH
 Scenario: User try to create office Negative Flow. Only FH pmo can do so, Running all negative scenarios for individuals fields
 
 Given a FH PMO logs in 
