@@ -1,6 +1,6 @@
 Feature: FH Edit Offices on MINC Because of old req where subtier end date can be outside of its parent department
 
-@FH3
+@FH @FH3
 Scenario: User test edit functionalities of name, start date, end dates for office creation. User test office is no end date and then test an office with end date because there are different set of rules when an end date is in place for creation. On MINC Because of old req where subtier end date can be outside of its parent department
 
 Given a FH PMO logs in 

@@ -1,6 +1,6 @@
 Feature: FH ORG PICKER
 
-@FH3
+@FH @FH3
 Scenario: FH org picker endpoint use in KIT
 
 Given a user goes to Org Picker endpoint

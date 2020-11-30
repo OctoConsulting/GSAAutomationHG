@@ -1,6 +1,6 @@
 Feature: FH Edit Offices on MINC office WITHOUT end date Because of old req where subtier end date can be outside of its parent department
 
-@FH3
+@FH @FH3
 Scenario: User test edit functionalities of name, start date, end dates,office type for office creation. User test office is no end date there are different set of rules when an end date is in place for creation. On MINC Because of old req where subtier end date can be outside of its parent department
 Validation is done based on office having no end date, validating with parents
 
