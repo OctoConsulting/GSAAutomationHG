@@ -687,8 +687,6 @@ public class EditOffice extends TestBase {
 		c.setTime(date);
 
 		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
-		// DONT THINK I NEED THIS
-		// ((JavascriptExecutor) driver).executeScript("scroll(0,500)");
 		// check
 		startdate1.clear();
 		startdate2.clear();

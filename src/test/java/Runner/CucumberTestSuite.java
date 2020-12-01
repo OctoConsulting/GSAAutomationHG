@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features\\FH3\\OrgPicker.feature",
+		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		//tags =  {"@FH3"},
+		tags =  {"@FH2"},
 		monochrome = true,
         dryRun = false)
 
