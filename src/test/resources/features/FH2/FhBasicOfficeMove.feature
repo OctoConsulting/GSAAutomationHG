@@ -1,7 +1,7 @@
 @FH @FH2 @IntegrationFH
 Feature: FH Office Move
 
-
+@BasicOfficeMove
 Scenario: Office Move-Only active offices can be moved i.e. inactive offices and offices that are scheduled to be active cannot be moved (MOVE drop-down doesnt show up)
 Offices can be moved between one active sub-tier to another under a same department. (Note: Inactive and scheduled to be active sub-tiers should not show up in the agency picker drop-down)
 During office move, same parent sub-tier cannot be chosen. UI Should throw an error if a same parent sub-tier is chosen

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 		plugin = { "pretty" }, 
 		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		tags =  {"@FH2"},
+		tags =  {"@CreateOfficeNegative"},
 		monochrome = true,
         dryRun = false)
 

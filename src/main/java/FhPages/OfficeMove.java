@@ -988,6 +988,7 @@ public class OfficeMove extends TestBase {
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		ActionsOffice.click();
+		Thread.sleep(2000);
 		edit2.click();
 		// validate
 		// ContractAwardsStateDate.clear();
@@ -1032,6 +1033,7 @@ public class OfficeMove extends TestBase {
 		MoveSubtier.click();
 		Thread.sleep(3000);
 		driver.navigate().refresh();
+		Thread.sleep(2000);
 		CreateOffice.click();
 
 		Random rand = new Random();
@@ -1350,7 +1352,7 @@ public class OfficeMove extends TestBase {
 		submit.click();
 
 		TimeUnit.SECONDS.sleep(10);
-
+		driver.navigate().refresh();
 		Thread.sleep(2000);
 		ActionsOffice.click();
 		Move.click();
@@ -1401,9 +1403,10 @@ public class OfficeMove extends TestBase {
 			submit.click();
 
 			TimeUnit.SECONDS.sleep(10);
-
+			driver.navigate().refresh();
 			Thread.sleep(2000);
 			ActionsOffice.click();
+			Thread.sleep(2000);
 			Move.click();
 			Thread.sleep(2000);
 			((JavascriptExecutor) driver).executeScript("scroll(0,900)");

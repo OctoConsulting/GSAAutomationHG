@@ -1,7 +1,7 @@
 @FH @FH2 @IntegrationFH
 Feature: FH Create+Edit department
 
-
+@CreateEditDepartment
 Scenario: User try to create and edit departments. Only FH pmo can do so
 
 	Given a FH PMO logs in 
