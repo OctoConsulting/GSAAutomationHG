@@ -1156,7 +1156,7 @@ public class OfficeMove extends TestBase {
 		boolean verify;
 		Thread.sleep(4000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
-
+		Thread.sleep(2000);
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
 				"/html/body/app/main/ng-component/div/div/div[2]/page/div/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/table/tr[2]"));

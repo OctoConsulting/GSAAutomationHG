@@ -1,5 +1,5 @@
-Feature:FH Create Office Negative Flow- Running all negative scenarios for individuals fields
-Scenario:User try to create office Negative Flow. Only FH pmo can do so, Running all negative scenarios for individuals fields
+Feature: FH Create Office Negative Flow- Running all negative scenarios for individuals fields
+Scenario: User try to create office Negative Flow. Only FH pmo can do so, Running all negative scenarios for individuals fields
 
 
 Given a FH PMO logs in 
