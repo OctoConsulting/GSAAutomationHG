@@ -1,6 +1,7 @@
+@FhEvents @IntegrationFH
 Feature: FH events page for non fh user and non fed user
 
-@FhEvents @IntegrationFHEvents @IntegrationFH
+
 Scenario: FH events page filtering and counts for non fh user and non fed user
 
 Given a user whos domain is not FH logs in

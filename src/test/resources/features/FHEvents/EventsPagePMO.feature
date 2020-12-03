@@ -1,6 +1,7 @@
+@FhEvents @IntegrationFH
 Feature: FH events page for fh super admin
 
-@FhEvents @IntegrationFHEvents @IntegrationFH
+
 Scenario: FH events page filtering and counts for FH Super PMO Admin
 
 Given a FH PMO logs in 

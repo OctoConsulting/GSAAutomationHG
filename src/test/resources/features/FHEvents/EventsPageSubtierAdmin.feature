@@ -1,6 +1,7 @@
+@FhEvents @IntegrationFH
 Feature: FH events page for Subtier Admin
 
-@FhEvents @IntegrationFHEvents @IntegrationFH
+
 Scenario: FH events page filtering and counts for Subtier Admin
 
 Given a subtier Admin of FH logs in
