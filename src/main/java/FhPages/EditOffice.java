@@ -1171,7 +1171,7 @@ public void SubmitingOffice() throws InterruptedException {
 }
 public void intoOffice3() throws InterruptedException {
 	Thread.sleep(3000);
-	FHSearch.sendKeys("OFFICE FOR DATA3");
+	FHSearch.sendKeys("OFFICE FOR DATA 3");
 	FHSearch.sendKeys(Keys.ENTER);
 }
 public void intoOffice4() throws InterruptedException {

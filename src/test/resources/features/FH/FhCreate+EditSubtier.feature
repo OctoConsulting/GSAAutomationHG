@@ -1,4 +1,4 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH Create+EditSubtier
 
 

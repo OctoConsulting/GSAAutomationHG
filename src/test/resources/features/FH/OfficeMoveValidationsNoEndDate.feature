@@ -1,4 +1,4 @@
-@FH @FH2 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH Office Move Functionality for office types, versions WITHOUT END DATE before and after move
 
 @OfficeMoveWithoutEndDate

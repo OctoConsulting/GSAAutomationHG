@@ -66,7 +66,7 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(utils.PageLoadoutTime, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(utils.ImplicitLoadoutTime, TimeUnit.SECONDS);
 		
-		// Environment set up: DEV=comp, TEST=minc
+		// Environment set up: DEV=comp, TEST=minc, PRODLIKE=alpha
 		driver.get(prop.getProperty("minc"));
 }
 }

@@ -1,7 +1,7 @@
-@FH3
+@FH2
 Feature: FH ORG PICKER
 
-
+@OrgPickerValidation
 Scenario: FH org picker endpoint use in KIT
 
 	Given a user goes to Org Picker endpoint

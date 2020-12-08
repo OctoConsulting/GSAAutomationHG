@@ -1,4 +1,4 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH searches pages/searching permissions for FH PMO/nonFH user/dept admin for fh/subtier admin
 
 

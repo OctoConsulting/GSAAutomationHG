@@ -1,4 +1,4 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH ORG PICKER Validation
 
 

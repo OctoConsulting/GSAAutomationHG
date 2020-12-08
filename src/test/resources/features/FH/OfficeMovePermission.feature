@@ -1,7 +1,7 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH testing of MOVE permission
 
-
+@MovePermission
 Scenario: Testing MOVE permission for various fh users. Super Admin has the "Transfer" permission by default.Super admin can always MOVE an office between one sub-tier to another under a same department
 Department admin has the "transfer" permission as an permission.The "Transfer" permission is available, then a department admin can MOVE an office between one sub-tier to another under a same department
 Sub-tier admin CAN NOT move an office

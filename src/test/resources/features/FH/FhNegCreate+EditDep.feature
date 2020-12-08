@@ -1,7 +1,7 @@
-@FH @FH2 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH NEG Create+Edit department
 
-
+@CreateEditDepNegative
 Scenario: User try to create and edit departments with negative inputs. Only FH pmo can do so
 
 	Given a FH PMO logs in 

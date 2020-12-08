@@ -1,4 +1,4 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH landing pages/FILTERS for FH PMO/DEP/SUBTIER-ADMIN/Non FH user/Non Fed
 
 

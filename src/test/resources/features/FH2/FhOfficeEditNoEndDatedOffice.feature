@@ -1,4 +1,4 @@
-@FH3
+@FH2
 Feature: FH Edit Offices on MINC office WITHOUT end date Because of old req where subtier end date can be outside of its parent department
 
 

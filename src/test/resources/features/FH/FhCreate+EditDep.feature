@@ -1,4 +1,4 @@
-@FH @FH2 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH Create+Edit department
 
 @CreateEditDepartment

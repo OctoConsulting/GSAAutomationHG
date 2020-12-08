@@ -1,7 +1,7 @@
-@FH @FH1 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH Region code validation scenarios
 
-
+@RegionCodeValidation
 Scenario: User(Super admin) test Region code validation scenarios both negative and positive 
 
 	Given a FH PMO logs in 

@@ -1,4 +1,4 @@
-@FH @FH2 @IntegrationFH
+@FH @IntegrationFH
 Feature: FH Create Office Negative Flow- Running all negative scenarios for individuals fields
 
 @CreateOfficeNegative
