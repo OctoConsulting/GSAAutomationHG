@@ -22,6 +22,7 @@ import FhPages.FHorgPicker;
 import FhPages.FhBasics;
 import FhPages.FhEventsPages;
 import FhPages.FhOrgPickerValidation;
+import FhPages.GeneralFHPage;
 import FhPages.OfficeMove;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -41,6 +42,8 @@ public class FH extends TestBase {
 	EditOffice editOffice;
 	OfficeMove officeMove;
 	feeds Feeds;
+	GeneralFHPage generalFhPage;
+	
 	@Then("^FH pmo searches heirarchy$")
 	public void fh_pmo_searches_heirarchy() throws Exception {
 		fhBasics = new FhBasics();
@@ -2492,6 +2495,35 @@ public void user_will_move_office_once_again_with_no_end_date_and_validates_vers
 	assertFalse("office move history", officeMove.isHistorical());
 }
 
+@When("^User navigates to Department \"([^\"]*)\"$")
+public void user_navigates_to_Department(String depName) throws InterruptedException  {
+	generalFhPage = new GeneralFHPage();
+	generalFhPage.navigateToDepartment(depName);;
+}
+
+@When("^User navigates to Subtier \"([^\"]*)\"$")
+public void user_navigates_to_Subtier(String subtierName) throws InterruptedException {
+	generalFhPage = new GeneralFHPage();
+	generalFhPage.navigateToSubtier();
+}
+
+@When("^User creates an office with end date \"([^\"]*)\", without office type$")
+public void user_creates_an_office_with_end_date_without_office_type(String endDate) throws Exception {
+	generalFhPage = new GeneralFHPage();
+	generalFhPage.createAndSubmitNewOfficeWithEndDateWithoutOfficeType(endDate);
+}
+
+@When("^User try to move newly created office to the new Subtier$")
+public void user_try_to_move_newly_created_office_to_the_new_Subtier() throws InterruptedException {
+	generalFhPage = new GeneralFHPage();
+	generalFhPage.moveOfficeToNewSubtier();
+}
+
+@Then("^User validates error message for office move end date is after new Subtier$")
+public void user_validates_error_message_for_office_move_end_date_is_after_new_Subtier() throws InterruptedException {
+	generalFhPage = new GeneralFHPage();
+	assertTrue(generalFhPage.validateCannotCompleteMoveWarningMsgForOfficeEndDate());
+}
 
 
 }

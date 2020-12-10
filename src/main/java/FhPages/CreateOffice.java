@@ -86,7 +86,7 @@ public class CreateOffice extends TestBase {
 	WebElement errormessageaac3;
 	@FindBy(xpath = "//span[text()=' This name already exists. Please enter a different name. ']")
 	WebElement NameError;
-	@FindBy(xpath = "//li[text()='Abbeville']")
+	@FindBy(xpath = "//li[text()=' Abbeville - AL ']")
 	WebElement cityChoice;
 	@FindBy(xpath = "//button[text()=' Edit ']")
 	WebElement edit;

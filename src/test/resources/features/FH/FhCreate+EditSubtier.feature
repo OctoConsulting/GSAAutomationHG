@@ -1,7 +1,7 @@
 @FH @IntegrationFH
 Feature: FH Create+EditSubtier
 
-
+@FhCreateEditSubtier
 Scenario: User try to create and edit Subtiers. Only FH pmo can do so
 
 	Given a FH PMO logs in 

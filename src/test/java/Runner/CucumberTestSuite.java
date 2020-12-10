@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features\\FH3\\FhEditOfficeForMincSubtierEndDateOutSideOfParent.feature",
+		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		//tags =  {"@FHEditOfficeMINC2"},
+		tags =  {"@WarningMsgValidationForOfficeEndDate"},
 		monochrome = true,
         dryRun = false)
 

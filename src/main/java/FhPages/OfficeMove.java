@@ -902,7 +902,6 @@ public class OfficeMove extends TestBase {
 		for (WebElement element : locatorforWhereTEXTisPresentt5) {
 			Requesttext.add(element.getText());
 		}
-		System.out.println("Dropdawn menu text is ==== " + Requesttext);
 
 		if (Requesttext.toString().contains("Updated")) {
 			verify = true;
