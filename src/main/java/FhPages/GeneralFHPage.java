@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -26,16 +27,36 @@ public class GeneralFHPage extends TestBase {
 	WebElement FhSearch;
 	@FindBy(xpath = "//*[@class='ng-star-inserted']/div[2]/div/a")
 	WebElement firstFHSearchResult;
-	@FindBy(xpath = "//a[@href='/fh/500153279/hierarchy']")
+	@FindBy(xpath = "//*[@id='primary-content']/strong")
+	WebElement noPrivilege;
+	@FindBy(xpath = "//*[text()='Sub-Tiers']")
 	WebElement linkForSubtiers;
-	@FindBy(xpath = "//a[@href='/fh/500153662']")
+	@FindBy(linkText = "AUTOMATED_SUBTIER_TEST_1")
 	WebElement firstSubtier;
+	@FindBy(xpath = "//li[text()='Washington']")
+	WebElement chooseCity;
 	@FindBy(xpath = "//div[text()='AST2 - AUTOMATED_SUBTIER_TEST 2']")
 	WebElement newSubtier;
 	@FindBy(xpath = "//*[text()='The end date of the office cannot be after the end date of the new parent sub-tier. Please correct the end date of either the office or of the new parent sub-tier to complete the office move.']")
 	WebElement OfficeEndDateCannotCompleteMove;
 	@FindBy(xpath = "//*[text()='The end date(s) of any office type(s) cannot be after the end date of the new parent Sub-Tier. Please correct the end dates of either the office types or of the new parent sub-tier to complete the office move.']")
 	WebElement OfficeTypeEndDateCannotCompleteMove;
+	public String noPrivilegeMsg = "//*[@id='primary-content']/strong";
+
+	public int noPrivilegeErrorMsg() {
+		int noPrevelegeErrorMsgSize = driver.findElements(By.xpath(noPrivilegeMsg)).size();
+		System.out.println("Error message size is : " + noPrevelegeErrorMsgSize);
+		return noPrevelegeErrorMsgSize;
+	}
+
+	public boolean isNoPrivilegeErrorMsgPresent() {
+		try {
+			return OfficeTypeEndDateCannotCompleteMove.isDisplayed();
+		} catch (Exception ex) {
+			System.out.println("working as desired");
+		}
+		return false;
+	}
 
 	public void navigateToDepartment(String depName) throws InterruptedException {
 		Thread.sleep(2000);
@@ -45,24 +66,38 @@ public class GeneralFHPage extends TestBase {
 		FhSearch.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		firstFHSearchResult.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			firstFHSearchResult.click();
+		}
 	}
 
 	public void navigateToSubtier() throws InterruptedException {
 		createOffice = new CreateOffice();
 		linkForSubtiers.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			linkForSubtiers.click();
+		}
 		firstSubtier.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			firstSubtier.click();
+		}
 	}
 
-	public void createAndSubmitNewOfficeWithEndDateWithoutOfficeType(String endDate) throws InterruptedException {
+	public void createNewOfficeWithEndDateWithoutOfficeType(String endDate) throws InterruptedException {
 		Thread.sleep(2000);
 		createOffice = new CreateOffice();
-		createOffice.CreateOffice.click();
-
+		try {
+			createOffice.CreateOffice.click();
+		} catch (Exception e) {
+			driver.navigate().refresh();
+			createOffice.CreateOffice.click();
+		}
 		((JavascriptExecutor) driver).executeScript("scroll(0,200)");
-
-		String randomAac = "99" + createRandomIntNumber();
 		Thread.sleep(2000);
-		createOffice.Aac.sendKeys(randomAac);
+		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
 		Thread.sleep(3000);
 
 		String officeName = "HG Test Office " + createRandomFloatNumber();
@@ -70,47 +105,117 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(1000);
 
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy ");
-		// get current date time with Date()
 		Date date = new Date();
-
-		// Now format the date
-		String StartDate = dateFormat.format(date);
-
-		// Print the Date
-		System.out.println(StartDate);
-		createOffice.startdate1.sendKeys(StartDate);
-
+		createOffice.startdate1.sendKeys(dateFormat.format(date));
 		Thread.sleep(1000);
 		createOffice.enddate1.sendKeys(endDate);
 
 		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
-		createOffice.Address.sendKeys("123 street");
+		createOffice.Address.sendKeys("12345 Str");
 		createOffice.country.click();
 		createOffice.countryChoice.click();
 		Thread.sleep(1000);
+		createOffice.zip.sendKeys("20007");
+		Thread.sleep(1000);
 		createOffice.city.click();
-		createOffice.cityChoice.click();
-		createOffice.zip.sendKeys("36310");
+		chooseCity.click();
 
 		Thread.sleep(2000);
 		createOffice.OfficeEditConfirmation.click();
 		Thread.sleep(10000);
+	}
 
-		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
-		Thread.sleep(5000);
-		createOffice.submit.click();
-		Thread.sleep(5000);
+	public void createNewOfficeWithOfficeType(String officeType, String endDate) throws InterruptedException {
+		Thread.sleep(2000);
+		createOffice = new CreateOffice();
+		try {
+			createOffice.CreateOffice.click();
+		} catch (Exception e) {
+			driver.navigate().refresh();
+			createOffice.CreateOffice.click();
+		}
+		((JavascriptExecutor) driver).executeScript("scroll(0,200)");
+		Thread.sleep(2000);
+		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
+		Thread.sleep(3000);
+
+		String officeName = "HG Test Office " + createRandomFloatNumber();
+		createOffice.ofcName.sendKeys(officeName);
+		Thread.sleep(1000);
+
+		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy ");
+		Date date = new Date();
+		String StartDate = dateFormat.format(date);
+		System.out.println(StartDate);
+		createOffice.startdate1.sendKeys(StartDate);
+
+		if (officeType.equalsIgnoreCase("Contract Awards")) {
+			createOffice.ContractAwards.click();
+			createOffice.ContractAwardsDate.sendKeys(StartDate);
+			createOffice.ContractAwardsEndDate0.sendKeys(endDate);
+
+		} else if (officeType.equalsIgnoreCase("Contract Funding")) {
+			createOffice.ContractFunding.click();
+			createOffice.ContractFundingStartDate.sendKeys(StartDate);
+			createOffice.ContractFundingEndDates0.sendKeys(endDate);
+
+		} else if (officeType.equalsIgnoreCase("Financial Assistance Awards")) {
+			createOffice.FinancialAssistanceAwards.click();
+			createOffice.FinancialAssistanceAwardsStartDate.sendKeys(StartDate);
+			createOffice.FinancialAssistanceAwardsEnd0.sendKeys(endDate);
+
+		} else if (officeType.equalsIgnoreCase("Financial Assistance Funding")) {
+			createOffice.FinancialAssistanceFunding.click();
+			createOffice.FinancialAssistanceFundingStartDate.sendKeys(StartDate);
+			createOffice.FinancialAssistanceFundingEndDates0.sendKeys(endDate);
+
+		} else {
+			createOffice.ContractAwards.click();
+			createOffice.ContractAwardsDate.sendKeys(StartDate);
+			createOffice.ContractAwardsEndDate0.sendKeys(endDate);
+
+			createOffice.ContractFunding.click();
+			createOffice.ContractFundingStartDate.sendKeys(StartDate);
+			createOffice.ContractFundingEndDates0.sendKeys(endDate);
+
+			createOffice.FinancialAssistanceAwards.click();
+			createOffice.FinancialAssistanceAwardsStartDate.sendKeys(StartDate);
+			createOffice.FinancialAssistanceAwardsEnd0.sendKeys(endDate);
+
+			createOffice.FinancialAssistanceFunding.click();
+			createOffice.FinancialAssistanceFundingStartDate.sendKeys(StartDate);
+			createOffice.FinancialAssistanceFundingEndDates0.sendKeys(endDate);
+		}
+
+		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
+		createOffice.Address.sendKeys("12345 Str");
+		createOffice.country.click();
+		createOffice.countryChoice.click();
+		Thread.sleep(1000);
+		createOffice.zip.sendKeys("20007");
+		Thread.sleep(1000);
+		createOffice.city.click();
+		chooseCity.click();
+
+		Thread.sleep(2000);
+		createOffice.OfficeEditConfirmation.click();
+		Thread.sleep(10000);
 	}
 
 	public void moveOfficeToNewSubtier() throws InterruptedException {
 		moveOffice = new OfficeMove();
 		Thread.sleep(5000);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
-		moveOffice.ActionsOffice.click();
+		try {
+			moveOffice.ActionsOffice.click();
+		} catch (Exception e) {
+			driver.navigate().refresh();
+			Thread.sleep(3000);
+			moveOffice.ActionsOffice.click();
+		}
 		Thread.sleep(2000);
 		moveOffice.Move.click();
 		Thread.sleep(2000);
+
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
 		Thread.sleep(1000);
 		moveOffice.FHMoveList.click();
@@ -120,12 +225,21 @@ public class GeneralFHPage extends TestBase {
 		moveOffice.MoveOffice.click();
 	}
 
-	public boolean validateCannotCompleteMoveWarningMsgForOfficeEndDate() throws InterruptedException {
+	public boolean validateCannotCompleteMoveWarningMsgForOfficeEndDate(String value) throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.println("Warning message = " + OfficeEndDateCannotCompleteMove.getText());
-		try {
-			return OfficeEndDateCannotCompleteMove.isDisplayed();
+		if (value.equalsIgnoreCase("Office end date")) {
+			System.out.println("Warning message = " + OfficeEndDateCannotCompleteMove.getText());
+		} else if (value.equalsIgnoreCase("Office type end date")) {
+			System.out.println("Warning message = " + OfficeTypeEndDateCannotCompleteMove.getText());
+		}
 
+		try {
+			if (value.equalsIgnoreCase("Office end date")) {
+				return OfficeEndDateCannotCompleteMove.isDisplayed();
+
+			} else if (value.equalsIgnoreCase("Office type end date")) {
+				return OfficeTypeEndDateCannotCompleteMove.isDisplayed();
+			}
 		} catch (Exception ex) {
 			System.out.println("working as desired");
 		}

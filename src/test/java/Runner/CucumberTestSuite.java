@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 		plugin = { "pretty" }, 
 		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		tags =  {"@WarningMsgValidationForOfficeEndDate"},
+		tags =  {"@EndDateWarningMsgValidation"},
 		monochrome = true,
         dryRun = false)
 

@@ -2510,7 +2510,17 @@ public void user_navigates_to_Subtier(String subtierName) throws InterruptedExce
 @When("^User creates an office with end date \"([^\"]*)\", without office type$")
 public void user_creates_an_office_with_end_date_without_office_type(String endDate) throws Exception {
 	generalFhPage = new GeneralFHPage();
-	generalFhPage.createAndSubmitNewOfficeWithEndDateWithoutOfficeType(endDate);
+	createOffice = new CreateOffice();
+	generalFhPage.createNewOfficeWithEndDateWithoutOfficeType(endDate);
+	createOffice.SubmitOffice();
+}
+
+@When("^User creates an office no end date, with \"([^\"]*)\" office type end date \"([^\"]*)\"$")
+public void user_creates_an_office_no_end_date_with_office_type_end_date(String officeType, String endDate) throws Exception {
+	generalFhPage = new GeneralFHPage();
+	createOffice = new CreateOffice();
+	generalFhPage.createNewOfficeWithOfficeType(officeType, endDate);
+	createOffice.SubmitOffice();
 }
 
 @When("^User try to move newly created office to the new Subtier$")
@@ -2519,10 +2529,10 @@ public void user_try_to_move_newly_created_office_to_the_new_Subtier() throws In
 	generalFhPage.moveOfficeToNewSubtier();
 }
 
-@Then("^User validates error message for office move end date is after new Subtier$")
-public void user_validates_error_message_for_office_move_end_date_is_after_new_Subtier() throws InterruptedException {
+@Then("^User validates error message for office move \"([^\"]*)\" is after new Subtier$")
+public void user_validates_error_message_for_office_move_is_after_new_Subtier(String value) throws Exception {
 	generalFhPage = new GeneralFHPage();
-	assertTrue(generalFhPage.validateCannotCompleteMoveWarningMsgForOfficeEndDate());
+	assertTrue(generalFhPage.validateCannotCompleteMoveWarningMsgForOfficeEndDate(value));
 }
 
 
