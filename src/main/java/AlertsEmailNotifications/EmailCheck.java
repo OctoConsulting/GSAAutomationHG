@@ -48,9 +48,12 @@ public static Logger logger = LoggerFactory.getLogger(EmailCheck.class);
 		delay(3);
 		driver.findElement(By.id("identifierNext")).click();
 		delay(3);
-		driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")).click();
+		driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button")).click();
 		delay(5);
-
+		driver.findElement(By.xpath("//*[@class='gb_Ia gbii']")).click();
+		delay(3);
+		driver.findElement(By.xpath("//*[contains(text(),'Octotest Account3')]")).click();
+		delay(5);
 	}
 	public String captureTitleFromLastEmail(int emailNo) {
 		delay(3);
