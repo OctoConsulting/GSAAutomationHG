@@ -226,6 +226,7 @@ public class CMSsteps extends TestBase {
 	public void users_CMS_is_generated() throws Exception {
 		Faqfilters = new faqfilters();
 		assertTrue("CMS new banner was not found/new banner DID NOT OPEN", Faqfilters.isnewtitledisplayed());
+		Thread.sleep(1000);
 	}
 
 	@Given("^CMS user Clicks on actions dropdown list$")

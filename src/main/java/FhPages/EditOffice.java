@@ -25,7 +25,7 @@ public class EditOffice extends TestBase {
 	WebElement ProfileEditCode;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div/aside/div/ul/li[2]/a")
 	WebElement subtierlink;
-	@FindBy(xpath = "//*[@id=\"hierarchy-content\"]/div/div[4]/div[1]/a")
+	@FindBy(xpath = "//*[@id='hierarchy-content']/div/div[4]/div[1]/a")
 	WebElement officelink;
 	@FindBy(xpath = "//*[@id=\"primary-content\"]/ng-component/div/div[1]/div[1]/button")
 	WebElement createlink;
@@ -37,7 +37,7 @@ public class EditOffice extends TestBase {
 	WebElement FHSearch;
 	@FindBy(xpath = "//a[@class=\"federal-hierarchy-org-item-title\"]")
 	WebElement FHSearchDepAgency;
-	@FindBy(xpath = "//a[@href=\"/fh/500154753\"]")
+	@FindBy(xpath = "//a[@class='federal-hierarchy-org-item-title']")
 	WebElement FHSearchDepAgency2;
 	@FindBy(xpath = "//button[text()=' Create Office ']")
 	WebElement CreateOffice;
@@ -68,7 +68,7 @@ public class EditOffice extends TestBase {
 	WebElement city;
 	@FindBy(id = "Mailing-Addressstate")
 	WebElement state;
-	@FindBy(xpath = "//button[text()=' Confirm ']")
+	@FindBy(xpath = "//*[text()=' Confirm ']")
 	WebElement OfficeEditConfirmation;
 	@FindBy(id = "resultItem_0")
 	WebElement countryChoice;
@@ -98,7 +98,7 @@ public class EditOffice extends TestBase {
 	WebElement StartDateError;
 	@FindBy(xpath = "//div[text()=' Showing  1-1  of  1  results ']")
 	WebElement ValidationForsearch;
-	@FindBy(xpath = "//span[text()=' Office name is required ']")
+	@FindBy(xpath = "//span[text()=' This field is required ']")//span[text()=' Office name is required ']")
 	WebElement BlankError;
 	@FindBy(xpath = "//h1[text()=' Edit Office Confirmation ']")
 	WebElement EditOfficeConfirm;
@@ -223,7 +223,7 @@ public class EditOffice extends TestBase {
 	WebElement POLICEPROCUREMENT;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement ActionDep;
-	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
+	@FindBy(xpath = "//*[@id='main-container']/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement USDep;
 	@FindBy(xpath = "//*[@id=\"main-container\"]/ng-component/div[1]/div/div[4]/div/div[2]/div/div[2]/div[1]/a")
 	WebElement DEPT26Dep;
@@ -687,8 +687,6 @@ public class EditOffice extends TestBase {
 		c.setTime(date);
 
 		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
-		// DONT THINK I NEED THIS
-		// ((JavascriptExecutor) driver).executeScript("scroll(0,500)");
 		// check
 		startdate1.clear();
 		startdate2.clear();
@@ -741,7 +739,7 @@ public void TestingEndDate6comp() throws InterruptedException {
 	enddate1.clear();
 	enddate2.clear();
 	enddate3.clear();
-	enddate1.sendKeys("01132021");
+	enddate1.sendKeys("05132021");
 	((JavascriptExecutor) driver).executeScript("scroll(0,9000)");
 
 	OfficeEditConfirmation.click();
@@ -1179,6 +1177,8 @@ public void intoOffice3() throws InterruptedException {
 public void intoOffice4() throws InterruptedException {
 	FHSearchDepAgency2.click();
 	Thread.sleep(1000);
+	driver.navigate().refresh();
+	Thread.sleep(2000);
 	ActionsOffice.click();
 	edit2.click();
 	Thread.sleep(3000);
@@ -2391,7 +2391,9 @@ public void extra2() throws InterruptedException {
 	FHSearch.sendKeys(Keys.ENTER);
 
 	FHSearchDepAgency.click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
+	driver.navigate().refresh();
+	Thread.sleep(2000);
 	ActionsOffice.click();
 	edit2.click();
 	Thread.sleep(3000);
@@ -2607,7 +2609,7 @@ public boolean TASValidation2() throws InterruptedException {
 	}
 	public void EditTas2() throws InterruptedException {
 		Thread.sleep(3000);
-		
+		driver.navigate().refresh();
 		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
 		ProfileEditCode.click();
 		Tas.clear();

@@ -39,7 +39,7 @@ public class CreateOffice extends TestBase {
 	WebElement ActionsOffice;
 	@FindBy(id = "ofcAAC-input")
 	WebElement Aac;
-	@FindBy(xpath= "//button[@type=\"button\"]")
+	@FindBy(xpath= "//button[@class='sam-ui button primary']")
 	WebElement submit;
 	@FindBy(xpath = "//*[@id=\"ofcName-input\"]")
 	WebElement ofcName;
@@ -86,7 +86,7 @@ public class CreateOffice extends TestBase {
 	WebElement errormessageaac3;
 	@FindBy(xpath = "//span[text()=' This name already exists. Please enter a different name. ']")
 	WebElement NameError;
-	@FindBy(xpath = "//li[text()='Abbeville']")
+	@FindBy(xpath = "//li[text()=' Abbeville - AL ']")
 	WebElement cityChoice;
 	@FindBy(xpath = "//button[text()=' Edit ']")
 	WebElement edit;
@@ -226,8 +226,11 @@ public class CreateOffice extends TestBase {
 		return false;
 	}
 
-	public void CreateOfficeTab() {
-		
+	public void CreateOfficeTab() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+
 		CreateOffice.click();
 	}
 
@@ -331,7 +334,7 @@ public class CreateOffice extends TestBase {
 	}
 
 	public boolean OfficeConfirmationPageValidation() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 		try {
 
 			return CreateConfirmationValidation.isDisplayed();
@@ -574,9 +577,12 @@ Thread.sleep(4000);
 		ContractAwards.click();
 		Thread.sleep(1000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
+		Thread.sleep(2000);
 		OfficeEditConfirmation.click();
-		Thread.sleep(7000);
-		((JavascriptExecutor) driver).executeScript("scroll(0,500)");
+		Thread.sleep(4000);
+		OfficeEditConfirmation.click();
+		Thread.sleep(5000);
+		//((JavascriptExecutor) driver).executeScript("scroll(0,500)");
 
 	}
 
@@ -897,8 +903,8 @@ Thread.sleep(4000);
 
 		FinancialAssistanceAwardsStartDate.sendKeys("02212018");
 		Thread.sleep(7000);
-		((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
-		Thread.sleep(2000);
+		//((JavascriptExecutor) driver).executeScript("scroll(0,1000)");
+		//Thread.sleep(2000);
 		OfficeEditConfirmation.click();
 		Thread.sleep(17000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
@@ -1584,9 +1590,9 @@ Thread.sleep(4000);
 	}
 
 	public boolean StartDateValidation() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,700)");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		try {
 
 			return StartDateError.isDisplayed();
@@ -1611,7 +1617,7 @@ Thread.sleep(4000);
 
 	public boolean StartDateValidation3() throws InterruptedException {
 		// ((JavascriptExecutor) driver).executeScript("scroll(0,700)");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		try {
 
 			return StartDateError3.isDisplayed();
@@ -1649,7 +1655,7 @@ Thread.sleep(4000);
 		Thread.sleep(9000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,600)");
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		try {
 
 			return EndDateError1.isDisplayed();
@@ -2095,14 +2101,13 @@ Thread.sleep(4000);
 	
 	}
 	public void SubmitOffice() throws InterruptedException {
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
 		submit.click();
-		
-		TimeUnit.SECONDS.sleep(120);
+		Thread.sleep(5000);
+
+		//TimeUnit.SECONDS.sleep(120);
 
 
 	}
