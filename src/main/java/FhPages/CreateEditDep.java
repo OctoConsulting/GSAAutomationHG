@@ -105,8 +105,7 @@ public class CreateEditDep extends TestBase {
 	WebElement EndDateError6;
 	@FindBy(xpath = "//span[text()=' There are 2 sub-tier organizations that are still active under this department. Please end date them before you end date this department. ']")
 	WebElement EndDateError7;
-	@FindBy(xpath = "//span[text()=' There are 4 offices that are still active and there is an office that is scheduled to be active under this department. Please end date them before you end date this department. ']")
-	//*[contains(text(),'offices that are still active and there is an office that is scheduled to be active under this department. Please end date them before you end date this department')]")
+	@FindBy(xpath = "//span[text()=' There are 3 offices that are still active and 2 offices that are scheduled to be active under this department. Please end date them before you end date this department. ']")
 	WebElement EndDateError8;
 	@FindBy(xpath = "//span[text()=' The end date can only be the current date or in the future. ']")
 	WebElement EndDateError9;
@@ -654,8 +653,8 @@ public class CreateEditDep extends TestBase {
 		}
 
 		System.out.println(Requesttext);
-		//TODO It should be analysys later
-		//ShowLessDepAgency.click();
+
+		ShowLessDepAgency.click();
 		Thread.sleep(2000);
 	}
 
@@ -680,8 +679,7 @@ public class CreateEditDep extends TestBase {
 		FHSearch.sendKeys(Keys.ENTER);
 		FHSearchDepAgency.click();
 		Thread.sleep(1000);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
+
 		EditSection.click();
 		Thread.sleep(2000);
 
@@ -860,9 +858,7 @@ public class CreateEditDep extends TestBase {
 	public void negCreateDepAgency7() throws InterruptedException {
 	//	DeptAgencySubmit.click();
 		Thread.sleep(5000);
-		driver.navigate().refresh();
-		driver.navigate().refresh();
-		Thread.sleep(2000);
+
 		edit2.click();
 		Thread.sleep(2000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,300)");
@@ -1146,9 +1142,6 @@ public class CreateEditDep extends TestBase {
 
 	}
 	public void TestingEndDate7() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
 		edit2.click();
 		Thread.sleep(2000);
 		DeptAgencyEndDate.clear();
@@ -1373,9 +1366,6 @@ public class CreateEditDep extends TestBase {
 
 	}
 	public void TestingEndDate12() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.navigate().refresh();
-		Thread.sleep(2000);
 		edit2.click();
 		Thread.sleep(2000);
 		DeptAgencyEndDate.clear();
