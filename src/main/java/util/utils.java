@@ -8,7 +8,7 @@ import java.util.Date;
 public class utils extends TestBase{
 	
 	
-	public static long PageLoadoutTime = 10;
+	public static long PageLoadoutTime = 60;
 	public static long ImplicitLoadoutTime = 10;
 	
 	

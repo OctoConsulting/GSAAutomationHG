@@ -105,13 +105,13 @@ public class Alerts extends TestBase{
 	WebElement expire;
 	@FindBy(xpath="//button[text()=' Expire ']")
 	WebElement expire2;
-	@FindBy(xpath="//img[@class=\"sam-logo\"]")
+	@FindBy(xpath="//*[@id='element-focus']")
 	WebElement beta;
 	@FindBy(xpath="//a[@title=\"System Alerts\"]")
 	WebElement SystemAlerts;
 	@FindBy(xpath="//*[@id=\"headerIconNotifications\"]")
 	WebElement NotificationAlerts;
-	@FindBy(xpath="//i[@aria-hidden=\"true\" and @class=\"fa fa-chevron-circle-right \"]")
+	@FindBy(xpath="//*[@class='fa fa-chevron-circle-right']")
 	WebElement NotificationAlerts2;
 	@FindBy(xpath="//a[text()='Alerts']")
 	WebElement AlertsTabOnFeeds;
@@ -762,26 +762,20 @@ Thread.sleep(1000);
 		Thread.sleep(3000);
 		publish.click();
 		Thread.sleep(3000);
-		
 
 		noenddate.click();
 		Thread.sleep(3000);
 		Thread.sleep(1000);
 		confirm.click();
 		Thread.sleep(5000);
-		
-		
-		
-		beta.click();
-		driver.navigate().refresh();
-		Thread.sleep(3000);
+				
+		//beta.click();
+		//driver.navigate().refresh();
+		//Thread.sleep(3000);
 
-		Thread.sleep(3000);
+		//driver.navigate().refresh();
 
-		driver.navigate().refresh();
-
-
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 
 		driver.navigate().refresh();
 
@@ -1068,7 +1062,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1093,7 +1087,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1119,7 +1113,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1145,7 +1139,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1171,7 +1165,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1197,7 +1191,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1220,7 +1214,7 @@ return AlertBanner.isDisplayed();
 
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 
@@ -1246,7 +1240,7 @@ return AlertBanner.isDisplayed();
 
 		boolean verify;
 		WebElement locatorforWhereTEXTisPresentt5 = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]"));
+				"//*[@id='main-container']//page/div/div/div[2]/div[2]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresentt5.getText();
 

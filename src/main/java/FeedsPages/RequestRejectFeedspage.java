@@ -261,7 +261,7 @@ public class RequestRejectFeedspage extends TestBase{
 			boolean verify;
 			//VALIDATION FOR "YOU"
 					WebElement locatorforWhereTEXTisPresent = driver.findElement(By.xpath(
-							"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
+							"//*[@id=\"main-container\"]/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 			
 					String Requesttext = locatorforWhereTEXTisPresent.getText();
 			
@@ -279,7 +279,7 @@ public class RequestRejectFeedspage extends TestBase{
 			boolean verify;
 			//VALIDATION FOR "YOU"
 					WebElement locatorforWhereTEXTisPresent = driver.findElement(By.xpath(
-							"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1]"));
+							"//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 			
 					String Requesttext = locatorforWhereTEXTisPresent.getText();
 			
@@ -298,7 +298,7 @@ public class RequestRejectFeedspage extends TestBase{
 		boolean verify;
 		// VALIDATION FOR "YOU"
 		WebElement locatorforWhereTEXTisPresent = driver.findElement(By.xpath(
-				"//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
+				"//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]"));
 
 		String Requesttext = locatorforWhereTEXTisPresent.getText();
 

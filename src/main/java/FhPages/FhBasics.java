@@ -46,11 +46,11 @@ public class FhBasics extends TestBase {
 	WebElement DEPT26Dep;
 	@FindBy(xpath = "//span[text()=' 47QDCA ']")
 	WebElement ResultIAE2;
-	@FindBy(xpath = "//div[text()=' 075']")
+	@FindBy(xpath = "//*[text()='075']")
 	WebElement ResultHHR;
 	@FindBy(xpath = "//span[text()=' 1625RJ ']")
 	WebElement ResultDOL;
-	@FindBy(xpath = "//div[text()=' 4732']")
+	@FindBy(xpath = "//*[text()='4732']")
 	WebElement ResultGSAL2;
 	@FindBy(xpath = "//a[text()='Clear Filters']")
 	WebElement ClearFH;
@@ -66,7 +66,7 @@ public class FhBasics extends TestBase {
 	WebElement OFFICEtab;
 	@FindBy(xpath = "//i[@class=\"fa fa-user ng-star-inserted\"]")
 	WebElement AdministratorIcon;
-	@FindBy(xpath = "//a[@href=\"/fh/100006809\"]")
+	@FindBy(xpath = "//a[@href='/fh/100006809']")
 	WebElement randomdep;
 	@FindBy(xpath = "//button[text()=' Create Sub-Tier ']")
 	WebElement CreateSubtierTab;
@@ -98,7 +98,7 @@ public class FhBasics extends TestBase {
 	WebElement Page1;
 	@FindBy(id = "sort-select")
 	WebElement SortBy;
-	@FindBy(xpath = "//div[text()=' 12K4']")
+	@FindBy(xpath = "//*[text()='12K4']")
 	WebElement SortByACvalidation;
 	@FindBy(xpath = "//a[@href=\"/fh/100170377\"]")
 	WebElement SortByACvalidation2;
@@ -630,7 +630,10 @@ public void InGSA2() throws InterruptedException {
 
 	}
 
-	public boolean isCreateSubtierThere() {
+	public boolean isCreateSubtierThere() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 
 		try {
 			return CreateSubtierTab.isDisplayed();
@@ -863,7 +866,10 @@ public void InGSA2() throws InterruptedException {
 	
 	}
 
-	public boolean isCreateOfficeThere() {
+	public boolean isCreateOfficeThere() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		try {
 			return CreateOfficeTab.isDisplayed();
 
