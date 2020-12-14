@@ -2101,12 +2101,11 @@ Thread.sleep(4000);
 	
 	}
 	public void SubmitOffice() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
-		Thread.sleep(3000);
-
+		Thread.sleep(5000);
 		submit.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		//TimeUnit.SECONDS.sleep(120);
 

@@ -31,8 +31,12 @@ public class GeneralFHPage extends TestBase {
 	WebElement noPrivilege;
 	@FindBy(xpath = "//*[text()='Sub-Tiers']")
 	WebElement linkForSubtiers;
-	@FindBy(linkText = "AUTOMATED_SUBTIER_TEST_1")
-	WebElement firstSubtier;
+	@FindBy(linkText = "Profile")
+	WebElement subtierProfile;
+	@FindBy(linkText = "Offices")
+	WebElement linkForOffices;
+	@FindBy(xpath = "//a[@title='sort']")
+	WebElement sortOffices;
 	@FindBy(xpath = "//li[text()='Washington']")
 	WebElement chooseCity;
 	@FindBy(xpath = "//div[text()='AST2 - AUTOMATED_SUBTIER_TEST 2']")
@@ -72,26 +76,61 @@ public class GeneralFHPage extends TestBase {
 		}
 	}
 
-	public void navigateToSubtier() throws InterruptedException {
-		createOffice = new CreateOffice();
+	public void navigateToSubtiersPage() throws InterruptedException {
+		Thread.sleep(2000);
 		linkForSubtiers.click();
 		if (noPrivilegeErrorMsg() > 0) {
 			driver.navigate().back();
 			linkForSubtiers.click();
 		}
-		firstSubtier.click();
+	}
+	
+	public void navigateToSubtierByName(String subtierName) throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement subtier = driver.findElement(By.linkText(subtierName));
+		subtier.click();
 		if (noPrivilegeErrorMsg() > 0) {
 			driver.navigate().back();
-			firstSubtier.click();
+			Thread.sleep(2000);
+			subtier.click();
 		}
 	}
 
-	public void createNewOfficeWithEndDateWithoutOfficeType(String endDate) throws InterruptedException {
+	public void navigateToOfficesPage() throws InterruptedException {
+		Thread.sleep(2000);
+		linkForOffices.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			linkForOffices.click();
+		}
+	}
+	
+	public void navigateToOfficeByName(String officeName) throws InterruptedException {
+		Thread.sleep(3000);
+		WebElement office = driver.findElement(By.linkText(officeName));
+		office.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			office.click();
+		}		
+	}
+	
+	public void sortOffices() throws InterruptedException {
+		Thread.sleep(3000);
+		sortOffices.click();
+	}
+	
+	public void goToSubtierProfilePage() throws InterruptedException {
+		Thread.sleep(2000);
+		subtierProfile.click();
+	}
+	
+	public void createNewOfficeWithEndDateWithoutOfficeType(String officeName, String endDate) throws InterruptedException {
 		Thread.sleep(2000);
 		createOffice = new CreateOffice();
 		try {
 			createOffice.CreateOffice.click();
-		} catch (Exception e) {
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 			driver.navigate().refresh();
 			createOffice.CreateOffice.click();
 		}
@@ -99,8 +138,9 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(2000);
 		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
 		Thread.sleep(3000);
-
-		String officeName = "HG Test Office " + createRandomFloatNumber();
+		
+		//Every time creates unique Office name
+		//String officeName = "HG Test Office " + createRandomFloatNumber();
 		createOffice.ofcName.sendKeys(officeName);
 		Thread.sleep(1000);
 
@@ -125,12 +165,12 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(10000);
 	}
 
-	public void createNewOfficeWithOfficeType(String officeType, String endDate) throws InterruptedException {
+	public void createNewOfficeWithOfficeType(String officeName, String officeType, String endDate) throws InterruptedException {
 		Thread.sleep(2000);
 		createOffice = new CreateOffice();
 		try {
 			createOffice.CreateOffice.click();
-		} catch (Exception e) {
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 			driver.navigate().refresh();
 			createOffice.CreateOffice.click();
 		}
@@ -139,7 +179,7 @@ public class GeneralFHPage extends TestBase {
 		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
 		Thread.sleep(3000);
 
-		String officeName = "HG Test Office " + createRandomFloatNumber();
+		//String officeName = "HG Test Office " + createRandomFloatNumber();
 		createOffice.ofcName.sendKeys(officeName);
 		Thread.sleep(1000);
 
@@ -207,7 +247,7 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(5000);
 		try {
 			moveOffice.ActionsOffice.click();
-		} catch (Exception e) {
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 			driver.navigate().refresh();
 			Thread.sleep(3000);
 			moveOffice.ActionsOffice.click();
@@ -219,7 +259,7 @@ public class GeneralFHPage extends TestBase {
 		((JavascriptExecutor) driver).executeScript("scroll(0,900)");
 		Thread.sleep(1000);
 		moveOffice.FHMoveList.click();
-
+		Thread.sleep(2000);
 		newSubtier.click();
 		Thread.sleep(3000);
 		moveOffice.MoveOffice.click();
@@ -240,7 +280,7 @@ public class GeneralFHPage extends TestBase {
 			} else if (value.equalsIgnoreCase("Office type end date")) {
 				return OfficeTypeEndDateCannotCompleteMove.isDisplayed();
 			}
-		} catch (Exception ex) {
+		} catch (org.openqa.selenium.NoSuchElementException ex) {
 			System.out.println("working as desired");
 		}
 		return false;

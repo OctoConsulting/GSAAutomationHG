@@ -8,8 +8,8 @@ import java.util.Date;
 public class utils extends TestBase{
 	
 	
-	public static long PageLoadoutTime = 30;
-	public static long ImplicitLoadoutTime = 5;
+	public static long PageLoadoutTime = 60;
+	public static long ImplicitLoadoutTime = 10;
 	
 	
 	public String CurrentDatePlus() {
