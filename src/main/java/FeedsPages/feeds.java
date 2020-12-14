@@ -46,7 +46,7 @@ public class feeds extends TestBase{
 	WebElement assignrole;
 	
 	public static final By FEED_ITEM = By.className("msg-feed-item");
-	public static final By Feed_Item2=By.xpath("//*[@id='main-container']/msg-feed-container/msg-feed-requests/page/div/div/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/span[1]");
+	public static final By Feed_Item2=By.xpath("//*[@id=\"main-container\"]/ng-component/page/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/div[2]/div[3]");
 	
 	public feeds() {
 		PageFactory.initElements(driver, this);
