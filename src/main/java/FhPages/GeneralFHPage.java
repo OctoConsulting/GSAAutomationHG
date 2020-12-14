@@ -84,15 +84,21 @@ public class GeneralFHPage extends TestBase {
 			linkForSubtiers.click();
 		}
 	}
-	
+
 	public void navigateToSubtierByName(String subtierName) throws InterruptedException {
 		Thread.sleep(2000);
 		WebElement subtier = driver.findElement(By.linkText(subtierName));
 		subtier.click();
 		if (noPrivilegeErrorMsg() > 0) {
-			driver.navigate().back();
-			Thread.sleep(2000);
-			subtier.click();
+			try {
+				driver.navigate().back();
+				Thread.sleep(2000);
+				subtier.click();
+
+			} catch (org.openqa.selenium.StaleElementReferenceException e) {
+				subtier.click();
+			}
+
 		}
 	}
 
@@ -104,7 +110,7 @@ public class GeneralFHPage extends TestBase {
 			linkForOffices.click();
 		}
 	}
-	
+
 	public void navigateToOfficeByName(String officeName) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement office = driver.findElement(By.linkText(officeName));
@@ -112,20 +118,21 @@ public class GeneralFHPage extends TestBase {
 		if (noPrivilegeErrorMsg() > 0) {
 			driver.navigate().back();
 			office.click();
-		}		
+		}
 	}
-	
+
 	public void sortOffices() throws InterruptedException {
 		Thread.sleep(3000);
 		sortOffices.click();
 	}
-	
+
 	public void goToSubtierProfilePage() throws InterruptedException {
 		Thread.sleep(2000);
 		subtierProfile.click();
 	}
-	
-	public void createNewOfficeWithEndDateWithoutOfficeType(String officeName, String endDate) throws InterruptedException {
+
+	public void createNewOfficeWithEndDateWithoutOfficeType(String officeName, String endDate)
+			throws InterruptedException {
 		Thread.sleep(2000);
 		createOffice = new CreateOffice();
 		try {
@@ -138,9 +145,9 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(2000);
 		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
 		Thread.sleep(3000);
-		
-		//Every time creates unique Office name
-		//String officeName = "HG Test Office " + createRandomFloatNumber();
+
+		// Every time creates unique Office name
+		// String officeName = "HG Test Office " + createRandomFloatNumber();
 		createOffice.ofcName.sendKeys(officeName);
 		Thread.sleep(1000);
 
@@ -165,7 +172,8 @@ public class GeneralFHPage extends TestBase {
 		Thread.sleep(10000);
 	}
 
-	public void createNewOfficeWithOfficeType(String officeName, String officeType, String endDate) throws InterruptedException {
+	public void createNewOfficeWithOfficeType(String officeName, String officeType, String endDate)
+			throws InterruptedException {
 		Thread.sleep(2000);
 		createOffice = new CreateOffice();
 		try {
@@ -179,7 +187,7 @@ public class GeneralFHPage extends TestBase {
 		createOffice.Aac.sendKeys("99" + createRandomIntNumber());
 		Thread.sleep(3000);
 
-		//String officeName = "HG Test Office " + createRandomFloatNumber();
+		// String officeName = "HG Test Office " + createRandomFloatNumber();
 		createOffice.ofcName.sendKeys(officeName);
 		Thread.sleep(1000);
 
