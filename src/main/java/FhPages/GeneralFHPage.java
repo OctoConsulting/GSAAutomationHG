@@ -94,9 +94,8 @@ public class GeneralFHPage extends TestBase {
 				driver.navigate().back();
 				Thread.sleep(2000);
 				subtier.click();
-
 			} catch (org.openqa.selenium.StaleElementReferenceException e) {
-				subtier.click();
+				//subtier.click();
 			}
 
 		}
