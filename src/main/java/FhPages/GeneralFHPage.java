@@ -48,9 +48,9 @@ public class GeneralFHPage extends TestBase {
 	public String noPrivilegeMsg = "//*[@id='primary-content']/strong";
 
 	public int noPrivilegeErrorMsg() {
-		int noPrevelegeErrorMsgSize = driver.findElements(By.xpath(noPrivilegeMsg)).size();
-		System.out.println("Error message size is : " + noPrevelegeErrorMsgSize);
-		return noPrevelegeErrorMsgSize;
+		int noPrivilegeErrorMsgSize = driver.findElements(By.xpath(noPrivilegeMsg)).size();
+		System.out.println("No privilege rror message size is : " + noPrivilegeErrorMsgSize);
+		return noPrivilegeErrorMsgSize;
 	}
 
 	public boolean isNoPrivilegeErrorMsgPresent() {
