@@ -9,7 +9,7 @@ public class utils extends TestBase{
 	
 	
 	public static long PageLoadoutTime = 60;
-	public static long ImplicitLoadoutTime = 10;
+	public static long ImplicitLoadoutTime = 30;
 	
 	
 	public String CurrentDatePlus() {

@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features",
+		features = "src\\test\\resources\\features-Integration4\\integration-FH2",
 		glue = {"stepdefinitions"},
-		tags =  {"@IntegrationFH"},
+		//tags =  {"@IntegrationFH"},
 		monochrome = true,
         dryRun = false)
 
