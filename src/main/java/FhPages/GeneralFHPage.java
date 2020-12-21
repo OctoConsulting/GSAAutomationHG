@@ -85,6 +85,20 @@ public class GeneralFHPage extends TestBase {
 		}
 	}
 
+	public void navigateToOffice(String officeName) throws InterruptedException {
+		Thread.sleep(2000);
+		FhSearch.clear();
+		FhSearch.sendKeys(officeName);
+		Thread.sleep(2000);
+		FhSearch.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		firstFHSearchResult.click();
+		if (noPrivilegeErrorMsg() > 0) {
+			driver.navigate().back();
+			firstFHSearchResult.click();
+		}
+	}
+
 	public void navigateToSubtierByName(String subtierName) throws InterruptedException {
 		Thread.sleep(2000);
 		WebElement subtier = driver.findElement(By.linkText(subtierName));
@@ -95,7 +109,7 @@ public class GeneralFHPage extends TestBase {
 				Thread.sleep(2000);
 				subtier.click();
 			} catch (org.openqa.selenium.StaleElementReferenceException e) {
-				//subtier.click();
+				// subtier.click();
 			}
 
 		}
@@ -251,7 +265,7 @@ public class GeneralFHPage extends TestBase {
 
 	public void moveOfficeToNewSubtier() throws InterruptedException {
 		moveOffice = new OfficeMove();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		try {
 			moveOffice.ActionsOffice.click();
 		} catch (org.openqa.selenium.NoSuchElementException e) {

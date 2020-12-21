@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		plugin = { "pretty" }, 
-		features = "src\\test\\resources\\features-Integration4\\integration-FH2",
+		features = "src\\test\\resources",
 		glue = {"stepdefinitions"},
-		//tags =  {"@IntegrationFH"},
+		tags =  {"@EndDateWarningMsgValidation"},
 		monochrome = true,
         dryRun = false)
 

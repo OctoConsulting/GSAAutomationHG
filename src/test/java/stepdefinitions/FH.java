@@ -2467,7 +2467,6 @@ public class FH extends TestBase {
 	public void user_navigates_to_Department(String depName) throws InterruptedException {
 		generalFhPage = new GeneralFHPage();
 		generalFhPage.navigateToDepartment(depName);
-		;
 	}
 
 	@When("^User navigates to Subtier \"([^\"]*)\"$")
@@ -2475,6 +2474,12 @@ public class FH extends TestBase {
 		generalFhPage = new GeneralFHPage();
 		generalFhPage.navigateToSubtiersPage();
 		generalFhPage.navigateToSubtierByName(subtierName);
+	}
+
+	@When("^User navigates to office by searching office name \"([^\"]*)\"$")
+	public void user_navigates_to_office_by_searching_office_name(String officeName) throws Exception {
+		generalFhPage = new GeneralFHPage();
+		generalFhPage.navigateToOffice(officeName);
 	}
 
 	@When("^User creates an office \"([^\"]*)\" with end date \"([^\"]*)\", without office type$")
